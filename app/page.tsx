@@ -206,7 +206,17 @@ export default function Home() {
 }
 
 // OfferCard Component
-function OfferCard({ color, title, price, features, cta, popular }) {
+// OfferCard Component
+interface OfferCardProps {
+  color: "purple" | "blue" | "green"; // Only allow these values
+  title: string;
+  price: string;
+  features: string[];
+  cta: string;
+  popular?: boolean;
+}
+
+function OfferCard({ color, title, price, features, cta, popular = false }: OfferCardProps) {
   const colorMap = { purple: "border-purple-500", blue: "border-blue-500", green: "border-green-500" };
   return (
     <motion.div className={`border-2 ${colorMap[color]} p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all ${popular?"scale-105":""}`}
@@ -225,8 +235,12 @@ function OfferCard({ color, title, price, features, cta, popular }) {
   );
 }
 
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
 // FAQ Component
-function FAQItem({ question, answer }) {
+function FAQItem({ question, answer }: FAQItemProps) {
   return (
     <motion.div className="mb-6 border-b pb-4" whileHover={{ scale: 1.01 }}>
       <h3 className="font-semibold text-xl mb-2">{question}</h3>
