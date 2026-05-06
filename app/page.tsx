@@ -135,6 +135,45 @@ function AfterPanel({
   );
 }
 
+function CaseStudyVideo({
+  src,
+  wm,
+  label,
+  title,
+}: {
+  src: string;
+  wm: string;
+  label: string;
+  title: string;
+}) {
+  return (
+    <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+      <span
+        className="absolute font-black italic select-none pointer-events-none"
+        style={{ fontSize: 'clamp(70px,20vw,150px)', color: 'rgba(255,255,255,0.08)', letterSpacing: '-0.05em' }}
+      >
+        {wm}
+      </span>
+      <div
+        className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-10"
+        style={{ background: 'linear-gradient(to top, rgba(10,8,18,.9), rgba(10,8,18,.15), transparent)' }}
+      >
+        <div className="text-[10px] font-black tracking-widest uppercase mb-1" style={{ color: '#FF4D40' }}>{label}</div>
+        <div className="font-black leading-none" style={{ fontSize: 'clamp(16px,4vw,24px)', color: '#fff' }}>{title}</div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Plan Result Cards ────────────────────────────────────────────────────────
 function PlanCard({
   icon, name, price, priceSuffix, desc, badge, selected, onClick,
@@ -926,19 +965,19 @@ export default function LocalBigPage() {
                     className="aspect-square flex items-center justify-center relative"
                     style={{ background: 'linear-gradient(145deg,#1a0800,#2a1000,#0a0812)' }}
                   >
-                    <div className="flex flex-col items-center gap-2">
-                      <div
-                        className="text-white text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full"
-                        style={{ background: '#E8271A', letterSpacing: '0.12em' }}
-                      >
-                        Ad #1
-                      </div>
-                      <div
-                        className="font-black text-center leading-snug"
-                        style={{ fontSize: 'clamp(12px,3vw,18px)', color: 'rgba(255,255,255,.5)' }}
-                      >
-                        Krispy Krunchy<br />Campaign Creative
-                      </div>
+                    <img
+                      src="/Data/Ad1.jpg"
+                      alt="Ad #1 creative"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 text-white text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ background: '#E8271A', letterSpacing: '0.12em' }}>
+                      Ad #1
+                    </div>
+                    <div
+                      className="absolute bottom-3 left-3 text-[11px] font-black"
+                      style={{ color: 'rgba(255,255,255,.85)', textShadow: '0 2px 12px rgba(0,0,0,.55)' }}
+                    >
+                      Krispy Krunchy Campaign Creative
                     </div>
                   </div>
                   <div className="px-3.5 py-3 flex items-baseline gap-1.5">
@@ -959,20 +998,22 @@ export default function LocalBigPage() {
                     style={{ background: 'linear-gradient(145deg,#1a0800,#2a1000,#0a0812)' }}
                   >
                     <div
-                      className="flex flex-col items-center gap-2"
+                      className="absolute inset-0"
                       style={{ filter: adUnlocked ? 'none' : 'blur(10px)', pointerEvents: adUnlocked ? 'auto' : 'none' }}
                     >
-                      <div
-                        className="text-white text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full"
-                        style={{ background: '#E8271A', letterSpacing: '0.12em' }}
-                      >
+                      <img
+                        src="/Data/Ad2.jpg"
+                        alt="Ad #2 creative"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute top-3 left-3 text-white text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-full" style={{ background: '#E8271A', letterSpacing: '0.12em' }}>
                         Ad #2
                       </div>
                       <div
-                        className="font-black text-center leading-snug"
-                        style={{ fontSize: 'clamp(12px,3vw,18px)', color: 'rgba(255,255,255,.5)' }}
+                        className="absolute bottom-3 left-3 text-[11px] font-black"
+                        style={{ color: 'rgba(255,255,255,.85)', textShadow: '0 2px 12px rgba(0,0,0,.55)' }}
                       >
-                        Krispy Krunchy<br />Campaign Creative
+                        Krispy Krunchy Campaign Creative
                       </div>
                     </div>
                     {!adUnlocked && (
@@ -1206,8 +1247,8 @@ export default function LocalBigPage() {
                     </MockBrowser>
                   }
                   afterContent={
-                    <AfterPanel
-                      gradient="linear-gradient(145deg,#0a0f18,#0d1a12)"
+                    <CaseStudyVideo
+                      src="/Case%20Study%231%20Taza2go.mp4"
                       wm="30d"
                       label="↑ Foot Traffic · Both Locations Live"
                       title="Results Coming Soon →"
@@ -1264,8 +1305,8 @@ export default function LocalBigPage() {
                     </MockBrowser>
                   }
                   afterContent={
-                    <AfterPanel
-                      gradient="linear-gradient(145deg,#110822,#1e0a3c)"
+                    <CaseStudyVideo
+                      src="/Case%20study%232%20Krispy.mp4"
                       wm="10x"
                       label="↑ #1 Local Market · 3x Digital Sales"
                       title="Full Case Study Coming →"
@@ -1385,8 +1426,8 @@ export default function LocalBigPage() {
                   </MockBrowser>
                 }
                 afterContent={
-                  <AfterPanel
-                    gradient="linear-gradient(145deg,#0a0812,#150a2a)"
+                  <CaseStudyVideo
+                    src="/Case%20Study%20%233%20Norwich%20Pharmacy.MOV"
                     wm="60d"
                     label="↑ Repeat Visits Up · Loyalty Live · Meta Ads Running"
                     title="Full Case Study Coming →"
@@ -1420,14 +1461,14 @@ export default function LocalBigPage() {
               {[
                 {
                   wm: '🌶️',
-                  bg: 'linear-gradient(145deg,#1a0800,#2a1000,#0a0812)',
+                  videoSrc: '/Case%20Study%20%234%20Spice%20%26%20Slice.MOV',
                   label: 'Case Study · Spice & Slice',
                   title: 'Owning a Niche\nNo Competitor Could Copy',
                   loc: '📍 Norwich, CT · Full Video Coming Soon',
                 },
                 {
                   wm: '🌙',
-                  bg: 'linear-gradient(145deg,#051a0a,#0a2a14)',
+                  videoSrc: '/Case%20Study%20%235%20Green%20Crescent.mp4',
                   label: 'Case Study · Green Crescent Clinic',
                   title: 'Building a Consistent\nPatient Base',
                   loc: '📍 Connecticut · Full Video Coming Soon',
@@ -1440,8 +1481,17 @@ export default function LocalBigPage() {
                 >
                   <div
                     className="relative flex items-center justify-center overflow-hidden"
-                    style={{ aspectRatio: '9/16', background: v.bg }}
+                    style={{ aspectRatio: '9/16', background: '#0F0B1A' }}
                   >
+                    <video
+                      className="absolute inset-0 w-full h-full object-cover"
+                      src={v.videoSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                    />
                     <span
                       className="absolute select-none"
                       style={{ fontSize: 'clamp(60px,18vw,120px)', opacity: 0.04 }}
@@ -1450,7 +1500,7 @@ export default function LocalBigPage() {
                     </span>
                     <div
                       className="absolute bottom-0 left-0 right-0 px-4 py-4 pt-10"
-                      style={{ background: 'linear-gradient(to top, rgba(10,8,18,.92), transparent)' }}
+                      style={{ background: 'linear-gradient(to top, rgba(10,8,18,.92), rgba(10,8,18,.2), transparent)' }}
                     >
                       <div className="text-[9px] font-black tracking-[0.14em] uppercase mb-1.5" style={{ color: '#FF4D40' }}>{v.label}</div>
                       <div
