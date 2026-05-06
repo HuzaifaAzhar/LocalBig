@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalBig — #1 Local Growth Program for Franchise Owners & Local Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  /* red palette */
+  --red:#D11A10;
+  --red-light:#E8271A;
+  --red-bright:#FF4D40;
+  --red-pale:#FFF0EF;
+  --red-dark:#A5130A;
+  --red-glow:rgba(209,26,16,.25);
+
+  /* neutrals */
+  --white:#FFFFFF;
+  --black:#0F0908;   /* near-black with red tint */
+  --dark:#160A08;
+  --mid-dark:#1F100C;
+  --gray:#9CA3AF;
+  --light:#FFF8F8;   /* very light red tint */
+  --border:#F0E4E4;
+  --border-dark:rgba(255,255,255,.08);
+
+  --font:'Montserrat',sans-serif;
+}
+body{font-family:var(--font);color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+button{font-family:var(--font);cursor:pointer;border:none;background:none;}
+img{display:block;max-width:100%;}
+.wrap{max-width:700px;margin:0 auto;padding:0 28px;}
+
+/* ── NAV ─────────────────────────────────── */
+nav{position:sticky;top:0;z-index:99;background:rgba(10,8,18,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-dark);padding:0 28px;}
+.nav-in{max-width:700px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-size:20px;font-weight:900;letter-spacing:-.03em;color:var(--white);}
+.logo span{color:var(--red-bright);}
+.nav-cta{background:var(--red-light);color:var(--white);font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;border-radius:100px;transition:background .15s,transform .15s;}
+.nav-cta:hover{background:var(--red);transform:scale(1.02);}
+
+/* ── HERO ────────────────────────────────── */
+.hero{background:var(--dark);color:var(--white);padding:80px 28px 88px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(209,26,16,.18) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{max-width:620px;margin:0 auto;position:relative;}
+
+/* live badge */
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:7px 18px;font-size:11px;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-bottom:24px;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#4ADE80;animation:blink 1.4s ease infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.7);}}
+
+/* audience tag */
+.aud-tag{display:inline-flex;align-items:center;gap:9px;background:var(--red-light);color:var(--white);border-radius:100px;padding:9px 22px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:32px;}
+.aud-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);animation:blink 1.2s ease infinite;flex-shrink:0;}
+
+/* headline */
+.hero-h1{font-size:clamp(40px,11vw,82px);font-weight:900;line-height:.9;letter-spacing:-.035em;color:var(--white);margin-bottom:44px;}
+.hl-stop{color:var(--red-bright);}
+.hl-chains{background:var(--red-light);color:var(--white);padding:3px 14px 3px 8px;border-radius:7px;font-style:italic;display:inline;position:relative;}
+.hl-other{font-size:.26em;font-weight:900;letter-spacing:.1em;text-transform:uppercase;font-style:normal;vertical-align:super;line-height:1;opacity:.8;margin-right:3px;}
+
+/* brand logos */
+.brand-logos{margin:28px 0;}
+.brand-logos-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:14px;}
+.brand-logos-row{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+.bli{width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;padding:9px;filter:grayscale(100%) brightness(1.8);opacity:.35;transition:all .2s;}
+.bli:hover{filter:grayscale(0%) brightness(1);opacity:1;background:rgba(255,255,255,.12);}
+.bli img{width:100%;height:100%;object-fit:contain;}
+
+/* guarantee sub */
+.hero-guarantee{font-size:clamp(17px,4vw,27px);font-weight:900;line-height:1.2;letter-spacing:-.02em;color:var(--white);margin-bottom:18px;}
+.hl-gcta{background:var(--red-light);color:var(--white);padding:2px 10px;border-radius:5px;display:inline;}
+.hero-aud-line{font-size:14px;color:rgba(255,255,255,.45);font-weight:500;margin-bottom:8px;line-height:1.5;}
+.hero-aud-line strong{color:rgba(255,255,255,.8);font-weight:800;}
+.guarantee-grey{color:rgba(255,255,255,.35);font-weight:600;}
+
+/* sub */
+.hero-sub{font-size:16px;font-weight:500;color:rgba(255,255,255,.5);line-height:1.65;max-width:460px;margin:0 auto 36px;}
+
+/* CTA */
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:44px;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--red-light);color:var(--white);font-size:13px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;padding:14px 28px;border-radius:100px;box-shadow:0 6px 32px var(--red-glow);transition:background .15s,transform .15s,box-shadow .15s;}
+.btn-primary:hover{background:var(--red);transform:translateY(-2px);box-shadow:0 12px 40px rgba(209,26,16,.4);}
+.cta-sub{font-size:12px;color:rgba(255,255,255,.35);font-weight:600;}
+.cta-sub a{color:rgba(255,255,255,.55);text-decoration:underline;text-underline-offset:3px;text-decoration-style:dashed;}
+
+/* video */
+.hv{background:var(--mid-dark);border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);}
+.hv-bar{background:rgba(255,255,255,.04);padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.04);}
+.hv-mac{display:flex;gap:6px;}
+.hv-macd{width:12px;height:12px;border-radius:50%;}
+.hv-url{flex:1;background:rgba(255,255,255,.05);border-radius:6px;padding:5px 14px;font-size:11px;color:rgba(255,255,255,.2);font-weight:600;text-align:center;letter-spacing:.02em;}
+.hv-thumb{aspect-ratio:1/1;background:linear-gradient(155deg,#1a0800,#2a1000,#0a0812);position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;}
+.hv-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;height:60%;background:radial-gradient(circle,rgba(209,26,16,.15),transparent 70%);pointer-events:none;}
+.hv-wm{position:absolute;font-size:clamp(100px,28vw,220px);font-weight:900;font-style:italic;color:rgba(255,255,255,.018);letter-spacing:-.05em;user-select:none;pointer-events:none;}
+.hv-play{width:76px;height:76px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 36px rgba(209,26,16,.6);z-index:2;transition:transform .15s,box-shadow .15s;}
+.hv-thumb:hover .hv-play{transform:scale(1.08);box-shadow:0 14px 48px rgba(209,26,16,.75);}
+.hv-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,8,18,.95),transparent);padding:56px 24px 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;}
+.hv-tag{background:var(--red-light);color:var(--white);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:100px;flex-shrink:0;white-space:nowrap;}
+.hv-label{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:5px;}
+.hv-title{font-size:clamp(18px,4.5vw,30px);font-weight:900;line-height:.97;color:var(--white);letter-spacing:-.02em;}
+
+/* ── PROOF BAR ───────────────────────────── */
+.proof-bar{background:var(--black);border-bottom:1px solid var(--border-dark);padding:18px 28px;}
+.proof-bar-in{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;}
+.pb-item{display:flex;align-items:center;gap:7px;padding:5px 18px;font-size:13px;font-weight:700;color:rgba(255,255,255,.7);}
+.pb-item .stars{color:var(--red-bright);font-size:13px;letter-spacing:1px;}
+.pb-div{width:1px;height:20px;background:rgba(255,255,255,.1);}
+
+/* ── SHARED SECTION ──────────────────────── */
+.section{padding:88px 28px;}
+.section-label{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--red-bright);display:block;margin-bottom:12px;}
+.section-title{font-size:clamp(28px,6.5vw,48px);font-weight:900;line-height:.95;letter-spacing:-.025em;margin-bottom:44px;}
+.section-title em{font-style:italic;color:var(--red-light);}
+.section-title.xxl{font-size:clamp(38px,10vw,72px);line-height:.92;letter-spacing:-.03em;}
+
+/* ── PROBLEMS ────────────────────────────── */
+.problems{border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.prob{padding:48px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;border-bottom:1px solid var(--border);transition:background .15s;background:var(--white);}
+.prob:last-child{border-bottom:none;}
+.prob:hover{background:var(--light);}
+.prob.hero-prob{background:var(--dark);border-bottom:none;}
+.prob.hero-prob:hover{background:var(--mid-dark);}
+.prob-em{font-size:72px;line-height:1;margin-bottom:20px;}
+.prob.hero-prob .prob-em{font-size:80px;}
+.prob-q{font-size:clamp(26px,5.5vw,38px);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:12px;color:var(--black);}
+.prob.hero-prob .prob-q{font-size:clamp(30px,6.5vw,46px);color:var(--white);}
+.prob-q .hl-r{color:var(--red-light);}
+.prob.hero-prob .prob-q .hl-r{color:rgba(255,255,255,.55);}
+.prob-a{font-size:15px;color:var(--gray);line-height:1.7;max-width:480px;}
+.prob.hero-prob .prob-a{font-size:15px;color:rgba(255,255,255,.45);}
+
+/* ── CASES ───────────────────────────────── */
+.cases-grid{border:1px solid var(--border);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}
+.case-item{min-width:0;}
+.case-item:first-child{border-right:1px solid var(--border);}
+.case-item+.case-item{border-top:none;}
+.see-more{grid-column:1/-1;}
+@media(max-width:640px){
+  .cases-grid{grid-template-columns:1fr;}
+  .case-item:first-child{border-right:none;border-bottom:1px solid var(--border);}
+}
+.case-meta{padding:20px 22px 0;}
+.case-lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:5px;}
+.case-vs{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:var(--red-light);padding:4px 12px;border-radius:5px;margin-bottom:10px;}
+.case-title{font-size:clamp(20px,5vw,32px);font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:16px;color:var(--red-light);}
+.ba-toggle{border-top:1px solid var(--border);}
+.ba-tabs{display:flex;}
+.ba-tab{flex:1;padding:12px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:all .15s;}
+.ba-tab:first-child{border-right:1px solid var(--border);}
+.ba-tab .dot{width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;transition:background .15s;}
+.ba-tab.t-before{background:var(--light);color:var(--black);}
+.ba-tab.t-before .dot{background:var(--gray);}
+.ba-tab.t-after{background:var(--red-light);color:var(--white);}
+.ba-tab.t-after .dot{background:rgba(255,255,255,.6);}
+.ba-panel{display:none;aspect-ratio:9/16;overflow:hidden;position:relative;}
+.ba-panel.show{display:block;}
+.bm{width:100%;height:100%;background:#0F0B1A;display:flex;flex-direction:column;padding:14px;}
+.bm-bar{background:rgba(255,255,255,.06);border-radius:4px;padding:5px 8px;display:flex;align-items:center;gap:5px;margin-bottom:8px;flex-shrink:0;}
+.bm-dots{display:flex;gap:3px;}
+.bm-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.1);}
+.bm-url{flex:1;background:rgba(255,255,255,.04);border-radius:3px;height:9px;margin-left:5px;}
+.bm-scroll{flex:1;overflow:hidden;}
+.bm-inner{display:flex;flex-direction:column;gap:5px;animation:scroll 9s linear infinite;}
+@keyframes scroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+.bm-r{height:7px;border-radius:2px;background:rgba(255,255,255,.05);}
+.bm-r.w{width:80%}.bm-r.m{width:58%}.bm-r.s{width:38%}
+.bm-r.img{height:36px;background:rgba(255,255,255,.04);}
+.bm-r.ac{background:rgba(209,26,16,.2);width:46%;}
+.bm-badge{font-size:8px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.15);padding:3px 7px;border:1px solid rgba(255,255,255,.07);border-radius:3px;display:inline-block;margin-bottom:4px;}
+.bm-maps{background:rgba(255,255,255,.03);border-radius:4px;padding:6px;margin-bottom:4px;}
+.bm-pin{display:flex;align-items:center;gap:4px;margin-bottom:3px;}
+.bm-pd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.1);flex-shrink:0;}
+.bm-pl{height:5px;border-radius:2px;background:rgba(255,255,255,.06);}
+.after-panel{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;overflow:hidden;}
+.ap-1{background:linear-gradient(145deg,#110822,#1e0a3c);}
+.ap-2{background:linear-gradient(145deg,#0a0812,#150a2a);}
+.ap-wm{position:absolute;font-size:clamp(70px,20vw,150px);font-weight:900;font-style:italic;color:rgba(255,255,255,.03);letter-spacing:-.05em;user-select:none;}
+.ap-play{width:60px;height:60px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(209,26,16,.55);z-index:2;transition:transform .15s;}
+.ap-play:hover{transform:scale(1.07);}
+.ap-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,8,18,.92),transparent);padding:36px 18px 16px;}
+.ap-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red-bright);margin-bottom:5px;}
+.ap-title{font-size:clamp(16px,4vw,24px);font-weight:900;line-height:1;color:var(--white);}
+.case-stats{display:flex;border-top:1px solid var(--border);}
+.cs{flex:1;padding:16px 14px;text-align:center;}
+.cs+.cs{border-left:1px solid var(--border);}
+.cs-n{font-size:28px;font-weight:900;color:var(--red-light);line-height:1;letter-spacing:-.02em;}
+.cs-l{font-size:9px;font-weight:700;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.case-body{padding:18px 22px;border-top:1px solid var(--border);}
+.case-story{font-size:13.5px;line-height:1.72;color:var(--gray);}
+.case-story strong{color:var(--black);font-weight:700;}
+.case-locs{display:flex;gap:10px;padding:10px 22px;border-top:1px solid var(--border);}
+.loc{font-size:13px;font-weight:700;color:var(--black);}
+.see-more{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:14px;background:var(--red-light);border:none;border-radius:0 0 16px 16px;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--white);transition:background .15s;}
+.see-more:hover{background:var(--red);}
+.sm-arr{transition:transform .3s;}
+.see-more.open .sm-arr{transform:rotate(180deg);}
+.hidden-cases{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s ease,opacity .4s ease;}
+.hidden-cases.show{max-height:1200px;opacity:1;}
+.mini-case{border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:12px;}
+.mc-ey{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red-light);margin-bottom:5px;}
+.mc-h{font-size:18px;font-weight:900;letter-spacing:-.02em;margin-bottom:7px;}
+.mc-loc{font-size:12px;font-weight:700;color:var(--gray);margin-bottom:7px;}
+.mc-b{font-size:13px;line-height:1.6;color:var(--gray);margin-bottom:7px;}
+.mc-b strong{color:var(--black);font-weight:700;}
+.mc-r{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red-light);}
+
+/* ── REVIEWS ─────────────────────────────── */
+.quotes{display:flex;flex-direction:column;gap:14px;}
+.quote-card{background:var(--dark);border-radius:16px;padding:28px 24px;}
+.quote-text{font-size:15px;font-style:italic;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:18px;font-weight:500;}
+.quote-attr{display:flex;align-items:center;gap:9px;}
+.qa-dot{width:8px;height:8px;border-radius:50%;background:var(--red-bright);flex-shrink:0;}
+.qa-name{font-size:12px;font-weight:700;color:rgba(255,255,255,.35);}
+.qa-stars{color:var(--red-bright);font-size:13px;margin-left:auto;}
+
+/* ── THE SYSTEM ──────────────────────────── */
+.offer-section{background:var(--dark);padding:88px 28px;}
+.offer-inner{max-width:700px;margin:0 auto;}
+.offer-ey{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--red-bright);display:block;margin-bottom:12px;}
+.offer-h{font-size:clamp(32px,8vw,60px);font-weight:900;line-height:.93;letter-spacing:-.03em;color:var(--white);margin-bottom:14px;}
+.offer-h em{font-style:italic;color:var(--red-bright);}
+.offer-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;max-width:500px;margin-bottom:44px;}
+.offer-desc strong{color:rgba(255,255,255,.9);}
+.offer-cards{display:flex;flex-direction:column;gap:2px;margin-bottom:40px;}
+.oc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 20px;display:flex;gap:16px;align-items:flex-start;transition:background .15s,border-color .15s;}
+.oc:hover{background:rgba(209,26,16,.1);border-color:rgba(209,26,16,.3);}
+.oc-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+.oc-title{font-size:16px;font-weight:900;color:var(--white);margin-bottom:4px;letter-spacing:-.01em;}
+.oc-desc{font-size:13px;color:rgba(255,255,255,.38);line-height:1.6;}
+.how-steps-dark{display:flex;border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;}
+.hs{flex:1;text-align:center;padding:22px 12px;border-right:1px solid rgba(255,255,255,.07);}
+.hs:last-child{border-right:none;}
+.hs-n{width:34px;height:34px;background:var(--red-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:14px;font-weight:900;color:var(--white);}
+.hs-lbl{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);line-height:1.4;}
+.hs-sub{font-size:9px;color:rgba(255,255,255,.22);margin-top:3px;font-weight:600;}
+
+/* ── GUARANTEE ───────────────────────────── */
+.guar-section{background:var(--red-pale);border-top:2px solid var(--red-light);border-bottom:2px solid var(--red-light);padding:52px 28px;}
+.guar-in{max-width:700px;margin:0 auto;display:flex;gap:24px;align-items:flex-start;}
+.guar-icon{font-size:56px;flex-shrink:0;line-height:1;}
+.guar-h{font-size:clamp(36px,9vw,68px);font-weight:900;line-height:.93;letter-spacing:-.03em;margin-bottom:16px;color:var(--black);}
+.guar-h em{font-style:italic;color:var(--red-light);}
+.guar-body{font-size:15px;color:#4B5563;line-height:1.7;}
+.guar-body strong{color:var(--black);font-weight:800;}
+@media(max-width:500px){.guar-in{flex-direction:column;gap:14px;}}
+
+/* ── PRICING ─────────────────────────────── */
+.pricing-section{background:var(--light);padding:88px 28px;}
+.pricing-inner{max-width:700px;margin:0 auto;}
+.p-cards{display:flex;flex-direction:column;gap:12px;}
+.pc{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);transition:box-shadow .2s,transform .2s;}
+.pc:hover{box-shadow:0 8px 28px rgba(209,26,16,.1);transform:translateY(-2px);}
+.pc.feat{border:2px solid var(--red-light);background:var(--dark);}
+.pc.feat:hover{box-shadow:0 10px 36px rgba(209,26,16,.3);}
+.pc-phase-tag{font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--red-light);border:1.5px solid rgba(232,39,26,.3);border-radius:100px;padding:7px 18px;display:inline-block;margin-bottom:12px;}
+.pc-badge{display:inline-flex;background:var(--red-light);color:var(--white);font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:8px;}
+.pc-head{padding:22px 22px 16px;border-bottom:1px solid var(--border);}
+.pc.feat .pc-head{border-color:rgba(255,255,255,.07);}
+.pc-name{font-size:clamp(30px,7vw,44px);font-weight:900;line-height:1;letter-spacing:-.025em;margin-bottom:6px;}
+.pc.feat .pc-name{color:var(--white);}
+.pc-desc{font-size:13px;color:var(--gray);line-height:1.5;}
+.pc.feat .pc-desc{color:rgba(255,255,255,.4);}
+.pc-price{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:2px;}
+.pc.feat .pc-price{border-color:rgba(255,255,255,.07);}
+.pc-dollar{font-size:18px;font-weight:900;margin-top:5px;}
+.pc.feat .pc-dollar{color:var(--white);}
+.pc-amt{font-size:54px;font-weight:900;line-height:1;letter-spacing:-.04em;}
+.pc.feat .pc-amt{color:var(--white);}
+.pc-per,.pc-min{font-size:13px;color:var(--gray);font-weight:600;align-self:flex-end;margin-bottom:6px;}
+.pc-min{margin-left:4px;}
+.pc.feat .pc-per,.pc.feat .pc-min{color:rgba(255,255,255,.3);}
+.pc-feats{list-style:none;padding:16px 22px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--border);}
+.pc.feat .pc-feats{border-color:rgba(255,255,255,.07);}
+.pc-feats li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;font-weight:600;line-height:1.4;color:#1F2937;}
+.pc.feat .pc-feats li{color:rgba(255,255,255,.75);}
+.pc-check{width:20px;height:20px;border-radius:50%;background:var(--red-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pc.feat .pc-check{background:rgba(209,26,16,.35);}
+.pc-check svg{width:10px;height:10px;}
+.pc-foot{padding:16px 22px;}
+.btn-join{display:block;text-align:center;background:var(--white);color:var(--red-light);font-size:12px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;padding:12px;border-radius:100px;margin-bottom:8px;transition:background .15s,color .15s;}
+.btn-join:hover{background:var(--light);}
+.pc-note{font-size:11px;color:var(--gray);text-align:center;line-height:1.5;}
+.pc.feat .pc-note{color:rgba(255,255,255,.28);}
+
+/* ── FAQ ─────────────────────────────────── */
+.faq-section{padding:88px 28px;}
+.faq-list{border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{width:100%;padding:18px 22px;text-align:left;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;color:var(--black);cursor:pointer;transition:background .15s;}
+.faq-q:hover{background:var(--light);}
+.faq-icon{font-size:20px;color:var(--red-light);transition:transform .25s;flex-shrink:0;margin-left:12px;font-weight:900;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:300px;}
+.faq-a-inner{padding:0 22px 18px;font-size:13.5px;color:var(--gray);line-height:1.75;}
+
+/* ── FINAL CTA ───────────────────────────── */
+.final-cta{background:var(--dark);padding:96px 28px;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(circle,rgba(209,26,16,.15) 0%,transparent 70%);pointer-events:none;}
+.final-inner{max-width:560px;margin:0 auto;text-align:center;position:relative;}
+.fc-ey{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-bottom:16px;}
+.fc-h{font-size:clamp(32px,9vw,64px);font-weight:900;line-height:.93;letter-spacing:-.03em;color:var(--white);margin-bottom:14px;}
+.fc-h em{font-style:italic;color:var(--red-bright);}
+.fc-chains-hl{background:var(--red-light);color:var(--white);padding:2px 14px;border-radius:7px;font-style:italic;display:inline;}
+.fc-sub{font-size:15px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:36px;}
+.lead-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:32px 28px;text-align:left;}
+.lf-title{font-size:17px;font-weight:900;color:var(--white);margin-bottom:5px;letter-spacing:-.01em;}
+.lf-sub{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:22px;line-height:1.5;}
+.lf-fields{display:flex;flex-direction:column;gap:10px;}
+.lf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:480px){.lf-row{grid-template-columns:1fr;}}
+.lf-input,.lf-select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:var(--white);font-size:14px;font-family:var(--font);font-weight:600;outline:none;transition:border-color .15s;}
+.lf-input::placeholder{color:rgba(255,255,255,.25);}
+.lf-input:focus,.lf-select:focus{border-color:rgba(232,80,70,.6);}
+.lf-select{appearance:none;cursor:pointer;color:rgba(255,255,255,.45);}
+.lf-select option{background:#0F0B1A;color:var(--white);}
+.lf-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--red-light);color:var(--white);font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:17px 20px;border-radius:100px;margin-top:4px;cursor:pointer;font-family:var(--font);transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 6px 28px var(--red-glow);}
+.lf-btn:hover{background:var(--red);transform:scale(1.01);box-shadow:0 10px 36px rgba(209,26,16,.45);}
+.lf-note{font-size:11px;text-align:center;margin-top:12px;font-weight:500;color:rgba(255,255,255,.2);}
+.lf-note a{color:rgba(232,80,70,.8);text-decoration:underline;text-underline-offset:3px;text-decoration-style:dashed;}
+
+/* ── FOOTER ──────────────────────────────── */
+footer{background:var(--black);padding:44px 28px 28px;border-top:1px solid var(--border-dark);}
+.footer-in{max-width:700px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:28px;}
+.footer-logo{font-size:18px;font-weight:900;letter-spacing:-.03em;color:var(--white);margin-bottom:5px;}
+.footer-logo span{color:var(--red-bright);}
+.footer-tag{font-size:11px;color:rgba(255,255,255,.25);max-width:200px;line-height:1.5;}
+.footer-col label{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.22);display:block;margin-bottom:12px;}
+.footer-links{display:flex;flex-direction:column;gap:9px;}
+.footer-links a{font-size:12px;font-weight:600;color:rgba(255,255,255,.35);transition:color .15s;}
+.footer-links a:hover{color:rgba(255,255,255,.8);}
+.footer-bottom{max-width:700px;margin:0 auto;padding-top:20px;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-bottom span{font-size:11px;color:rgba(255,255,255,.18);}
+
+/* compact competition strip in hero */
+.comp-strip{margin:24px 0 28px;text-align:center;}
+.comp-label{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);display:block;margin-bottom:12px;}
+.comp-logos{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;}
+.cli{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;padding:7px;filter:grayscale(100%) brightness(1.6);opacity:.3;transition:all .2s;}
+.cli:hover{opacity:.65;filter:grayscale(0%) brightness(1);}
+.cli img{width:100%;height:100%;object-fit:contain;}
+
+/* sound like eyebrow — XXL */
+.prob-eyebrow{font-size:clamp(14px,3.5vw,22px) !important;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--red-bright) !important;margin-bottom:10px;}
+.wwith-block{margin-bottom:32px;}
+.wwith-label{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);margin-bottom:16px;}
+.wwith-logos{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.wwith-logo{width:68px;height:68px;border-radius:14px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden;transition:box-shadow .2s;}
+.wwith-logo:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);}
+.wwith-logo img{width:100%;height:100%;object-fit:contain;filter:grayscale(20%);}
+.wwith-text{font-size:10px;font-weight:800;text-align:center;color:var(--black);line-height:1.3;padding:6px;}
+.wwith-more{font-size:12px;font-weight:800;color:var(--gray);letter-spacing:.06em;align-self:center;}
+.wwith-divider{border:none;border-top:1px solid var(--border);margin:0 0 32px;}
+/* final CTA chains highlight */
+.hl-chains-cta{font-style:italic;color:var(--red-bright);}
+
+/* ── AUDIENCE POPUP ──────────────────────── */
+.popup-overlay{position:fixed;inset:0;background:rgba(10,8,18,.85);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeOverlay .3s ease;}
+@keyframes fadeOverlay{from{opacity:0;}to{opacity:1;}}
+.popup-box{background:var(--dark);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:44px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6);animation:slideUp .35s ease;}
+@keyframes slideUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.popup-logo{font-size:18px;font-weight:900;letter-spacing:-.03em;color:var(--white);margin-bottom:28px;}
+.popup-logo span{color:var(--red-bright);}
+.popup-q{font-size:clamp(22px,5vw,30px);font-weight:900;line-height:1.1;letter-spacing:-.025em;color:var(--white);margin-bottom:8px;}
+.popup-sub{font-size:14px;color:rgba(255,255,255,.4);margin-bottom:32px;line-height:1.5;}
+.popup-choices{display:flex;flex-direction:column;gap:12px;}
+.popup-btn{padding:18px 24px;border-radius:14px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--white);font-size:15px;font-weight:800;letter-spacing:-.01em;cursor:pointer;transition:all .2s;text-align:left;display:flex;align-items:center;gap:14px;font-family:var(--font);}
+.popup-btn:hover{background:rgba(209,26,16,.15);border-color:rgba(209,26,16,.4);}
+.popup-btn.selected{background:var(--red-light);border-color:var(--red-light);}
+.popup-icon{font-size:28px;flex-shrink:0;}
+.popup-btn-text{}
+.popup-btn-title{font-size:15px;font-weight:900;display:block;}
+.popup-btn-sub{font-size:12px;opacity:.6;font-weight:600;display:block;margin-top:2px;}
+.popup-skip{font-size:11px;color:rgba(255,255,255,.2);margin-top:20px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;display:block;transition:color .15s;}
+.popup-skip:hover{color:rgba(255,255,255,.5);}
+
+/* ── AUDIENCE SWITCHER BAR ───────────────── */
+.audience-bar{background:var(--black);border-bottom:1px solid var(--border-dark);padding:0 28px;position:sticky;top:62px;z-index:98;}
+.audience-bar-in{max-width:700px;margin:0 auto;display:flex;align-items:center;gap:0;height:44px;}
+.ab-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-right:16px;white-space:nowrap;}
+.ab-tabs{display:flex;gap:4px;}
+.ab-tab{padding:6px 16px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:.04em;color:rgba(255,255,255,.4);cursor:pointer;transition:all .15s;white-space:nowrap;border:1px solid transparent;}
+.ab-tab:hover{color:rgba(255,255,255,.75);}
+.ab-tab.active{background:var(--red-light);color:var(--white);border-color:var(--red-light);}
+
+/* ── 85 CUSTOMERS ADS SECTION ─────────────── */
+.ads-latest-tag{display:inline-flex;align-items:center;gap:6px;background:var(--red-light);color:var(--white);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:16px;}
+.ads-proof{margin-top:44px;text-align:center;}
+.ads-proof-title{font-size:clamp(26px,7vw,52px);font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--white);margin-bottom:28px;}
+.ads-proof-title em{font-style:italic;color:var(--red-bright);}
+.ads-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+.ad-card{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:var(--mid-dark);}
+.ad-placeholder{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(145deg,#1a0800,#2a1000,#0a0812);}
+.ad-blur .ad-inner-label{filter:blur(10px);pointer-events:none;}
+.ad-blur::after{content:'';position:absolute;inset:0;backdrop-filter:blur(6px);z-index:1;}
+.ad-inner-label{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.ad-tag{background:var(--red-light);color:var(--white);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px;}
+.ad-ph-text{font-size:clamp(12px,3vw,18px);font-weight:900;color:rgba(255,255,255,.5);line-height:1.2;text-align:center;}
+.ad-lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(10,8,18,.4);z-index:2;}
+.ad-lock-btn{width:58px;height:58px;background:var(--red-light);border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 28px rgba(209,26,16,.5);transition:transform .15s,box-shadow .15s;position:relative;z-index:3;}
+.ad-lock-btn:hover{transform:scale(1.08);box-shadow:0 10px 36px rgba(209,26,16,.65);}
+.ad-lock-label{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--white);position:relative;z-index:3;}
+.ad-foot{padding:12px 14px;display:flex;align-items:baseline;gap:5px;}
+.ad-metric span{font-size:22px;font-weight:900;color:var(--red-bright);letter-spacing:-.02em;}
+.ad-metric{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);}
+.ad-metric-label{font-size:11px;color:rgba(255,255,255,.3);font-weight:600;margin-left:auto;}
+.ads-unlock-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--white);font-size:13px;font-weight:800;letter-spacing:.05em;padding:13px 24px;border-radius:100px;transition:all .2s;cursor:pointer;text-decoration:none;}
+.ads-unlock-cta:hover{background:var(--red-light);border-color:var(--red-light);}
+.ads-result-note{font-size:11px;color:rgba(255,255,255,.25);font-weight:600;margin-top:12px;letter-spacing:.04em;}
+
+/* ── VERTICAL VIDEO PLACEHOLDERS ──────────── */
+.vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.vp-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.vp-thumb{aspect-ratio:9/16;background:linear-gradient(145deg,#1a0800,#2a1000,#0a0812);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.vp-wm{position:absolute;font-size:clamp(60px,18vw,120px);opacity:.04;user-select:none;}
+.vp-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,8,18,.92),transparent);padding:40px 16px 16px;}
+.vp-label{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red-bright);margin-bottom:5px;}
+.vp-title{font-size:clamp(14px,3.5vw,20px);font-weight:900;line-height:1.05;color:var(--white);letter-spacing:-.015em;margin-bottom:8px;}
+.vp-coming{font-size:10px;color:rgba(255,255,255,.3);font-weight:700;}
+@media(max-width:500px){.vp-grid{grid-template-columns:1fr;}.ads-grid{grid-template-columns:1fr;}}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;padding:4px;background:rgba(255,255,255,.07);border-radius:8px;cursor:pointer;transition:background .15s;}
+.hamburger:hover{background:rgba(255,255,255,.12);}
+.hamburger span{display:block;height:2.5px;background:var(--red-bright);border-radius:2px;transition:all .25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* nav drawer */
+.nav-drawer{position:fixed;top:0;right:-280px;width:260px;height:100%;background:var(--dark);border-left:1px solid var(--border-dark);z-index:200;transition:right .3s ease;padding:80px 24px 24px;display:flex;flex-direction:column;}
+.nav-drawer.open{right:0;}
+.nav-drawer-links{display:flex;flex-direction:column;gap:4px;}
+.nav-drawer-links a{font-size:15px;font-weight:700;color:rgba(255,255,255,.55);padding:12px 16px;border-radius:10px;transition:all .15s;}
+.nav-drawer-links a:hover{color:var(--white);background:rgba(255,255,255,.06);}
+.nav-drawer-cta{background:var(--red-light) !important;color:var(--white) !important;text-align:center;margin-top:16px;font-size:13px !important;font-weight:900 !important;letter-spacing:.05em;}
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:199;display:none;backdrop-filter:blur(3px);}
+.nav-overlay.show{display:block;}
+
+/* franchise hero */
+.franchise-h1{font-size:clamp(36px,10vw,78px);}
+.hero-franchise-sub{font-size:clamp(18px,4.5vw,28px);font-weight:700;color:rgba(255,255,255,.65);line-height:1.3;margin-bottom:28px;}
+.hl-busier{background:var(--red-light);color:var(--white);padding:2px 10px;border-radius:5px;display:inline;font-style:normal;}
+.pc-custom{border-style:solid;border-color:var(--border);background:var(--light) !important;}
+.pc-custom .pc-head{padding:18px 22px !important;border-bottom:none !important;}
+.pc-custom-icon{font-size:28px;flex-shrink:0;}
+.pc-custom-name{font-size:17px;font-weight:900;color:var(--black);letter-spacing:-.01em;margin-bottom:3px;}
+.pc-custom-sub{font-size:12px;color:var(--gray);line-height:1.5;max-width:300px;}
+.pc-custom-cta{display:inline-flex;align-items:center;background:var(--black);color:var(--white);font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;padding:10px 18px;border-radius:100px;white-space:nowrap;margin-left:auto;transition:background .15s;}
+.pc-custom-cta:hover{background:var(--red-light);}
+@media(max-width:500px){.pc-custom-cta{margin-left:0;margin-top:8px;}}
+.pc-kickoff{border-style:dashed;border-color:#F59E0B;}
+.pc-kickoff:hover{box-shadow:0 8px 28px rgba(245,158,11,.12);}
+.pc-onetime{color:#F59E0B !important;font-weight:800 !important;font-size:15px !important;}
+.hero-franchise-sub strong{color:var(--white);font-weight:900;}
+.btn-franchise{background:var(--white);color:var(--red);font-size:14px;}
+.btn-franchise:hover{background:var(--light);transform:translateY(-2px);}
+
+/* video title prominent */
+.hv-title-prominent{font-size:clamp(20px,5vw,32px) !important;line-height:1.05 !important;font-weight:900;}
+
+/* PAIN WIDGET */
+.pain-widget{background:var(--dark);border-radius:20px;overflow:hidden;border:1px solid var(--border-dark);}
+.pw-intro{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);padding:20px 24px 0;text-align:center;}
+.pw-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:12px;}
+@media(max-width:500px){.pw-grid{grid-template-columns:1fr;}}
+.pw-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;margin:5px;padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;transition:all .2s;color:var(--white);}
+.pw-item:hover,.pw-item.active{background:rgba(209,26,16,.15);border-color:rgba(209,26,16,.4);}
+.pw-item.active{background:var(--red-light);border-color:var(--red-light);}
+.pw-icon{font-size:48px;line-height:1;margin-bottom:12px;}
+.pw-label{font-size:clamp(14px,3.2vw,18px);font-weight:900;line-height:1.2;letter-spacing:-.01em;margin-bottom:10px;}
+.pw-arrow{font-size:16px;color:rgba(255,255,255,.3);transition:color .15s;}
+.pw-item.active .pw-arrow{color:rgba(255,255,255,.8);}
+/* 5th item spans full width */
+.pw-grid .pw-item:last-child{grid-column:1/-1;}
+@media(max-width:500px){.pw-grid .pw-item:last-child{grid-column:1;}}
+
+/* pain answers */
+.pw-answer{display:none;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07);padding:28px 24px;animation:fadeUp .3s ease;}
+.pw-answer.show{display:block;}
+.pa-icon{font-size:40px;margin-bottom:10px;text-align:center;}
+.pa-title{font-size:20px;font-weight:900;color:var(--white);margin-bottom:8px;letter-spacing:-.01em;text-align:center;}
+.pa-body{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65;text-align:center;margin-bottom:0;}
+.pf-form{text-align:left;margin-top:20px;}
+.pf-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;}
+.pf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:480px){.pf-row{grid-template-columns:1fr;}}
+.pf-in{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:13px 15px;color:var(--white);font-size:14px;font-family:var(--font);font-weight:600;outline:none;transition:border-color .15s;}
+.pf-in::placeholder{color:rgba(255,255,255,.25);}
+.pf-in:focus{border-color:rgba(209,26,16,.55);}
+.pf-sel{appearance:none;cursor:pointer;color:rgba(255,255,255,.5);}
+.pf-sel option{background:#160A08;color:var(--white);}
+.pf-btn{width:100%;display:flex;align-items:center;justify-content:center;background:var(--red-light);color:var(--white);font-size:14px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:15px 20px;border-radius:100px;cursor:pointer;font-family:var(--font);transition:background .15s,transform .15s;margin-top:4px;}
+.pf-btn:hover{background:var(--red);transform:scale(1.01);}
+.pf-note{font-size:10px;color:rgba(255,255,255,.2);text-align:center;margin-top:10px;}
+.pf-result{display:none;margin-top:20px;animation:fadeUp .35s ease;}
+.pf-result.show{display:block;}
+.pr-title{font-size:14px;font-weight:800;color:rgba(255,255,255,.7);margin-bottom:16px;text-align:center;}
+.pr-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+@media(max-width:480px){.pr-cards{grid-template-columns:1fr;}}
+.pr-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 16px;cursor:pointer;transition:all .2s;text-align:left;position:relative;}
+.pr-card:hover{background:rgba(209,26,16,.12);border-color:rgba(209,26,16,.4);}
+.pr-card.selected{background:var(--red-light);border-color:var(--red-light);}
+.pr-badge{position:absolute;top:-1px;right:-1px;background:var(--red-light);color:var(--white);font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:0 14px 0 10px;}
+.pr-card.selected .pr-badge{background:rgba(0,0,0,.25);}
+.pr-icon{font-size:28px;margin-bottom:8px;}
+.pr-name{font-size:15px;font-weight:900;color:var(--white);margin-bottom:4px;letter-spacing:-.01em;}
+.pr-price{font-size:22px;font-weight:900;color:var(--red-bright);margin-bottom:8px;line-height:1;}
+.pr-price span{font-size:13px;color:rgba(255,255,255,.4);font-weight:600;}
+.pr-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.55;}
+.pr-cta{display:flex;align-items:center;justify-content:center;background:var(--white);color:var(--red);font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:14px 20px;border-radius:100px;transition:opacity .15s,transform .15s;box-shadow:0 4px 18px rgba(0,0,0,.18);}
+.pr-cta:hover{opacity:.9;transform:scale(1.01);}
+
+.case-vs{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:var(--red-light);padding:4px 12px;border-radius:5px;margin-bottom:10px;}
+.case-wide{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:16px;}
+.cw-meta{padding:22px 22px 0;}
+.cw-label{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:5px;}
+.cw-title{font-size:clamp(22px,5vw,34px);font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:8px;color:var(--red-light);}
+.cw-sub{font-size:13px;color:var(--gray);line-height:1.5;margin-bottom:16px;}
+.cw-toggle{border-top:1px solid var(--border);}
+.cw-tabs{display:flex;}
+.cw-tab{flex:1;padding:12px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:all .15s;}
+.cw-tab:first-child{border-right:1px solid var(--border);}
+.cw-tab .dot{width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;}
+.cw-tab.cw-before{background:var(--light);color:var(--black);}
+.cw-tab.cw-before .dot{background:var(--gray);}
+.cw-tab.cw-after{background:var(--red-light);color:var(--white);}
+.cw-tab.cw-after .dot{background:rgba(255,255,255,.6);}
+.cw-panel{display:none;aspect-ratio:1/1;overflow:hidden;position:relative;}
+.cw-panel.show{display:block;}
+.cw-stats{display:flex;border-top:1px solid var(--border);}
+.cw-stat{flex:1;padding:14px 12px;text-align:center;border-right:1px solid var(--border);}
+.cw-stat:last-child{border-right:none;}
+.cw-n{font-size:26px;font-weight:900;color:var(--red-light);line-height:1;letter-spacing:-.02em;}
+.cw-l{font-size:9px;font-weight:700;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.cw-body{padding:18px 22px;border-top:1px solid var(--border);}
+.cw-loc{font-size:13px;font-weight:700;color:var(--black);margin-top:12px;}
+
+/* audience-specific content */
+.aud-franchise{display:block;}
+.aud-independent{display:none;}
+body.is-independent .aud-franchise{display:none;}
+body.is-independent .aud-independent{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.hero-inner>*{animation:fadeUp .55s ease both;}
+.hero-inner>*:nth-child(1){animation-delay:.0s;}
+.hero-inner>*:nth-child(2){animation-delay:.07s;}
+.hero-inner>*:nth-child(3){animation-delay:.13s;}
+.hero-inner>*:nth-child(4){animation-delay:.18s;}
+.hero-inner>*:nth-child(5){animation-delay:.23s;}
+.hero-inner>*:nth-child(6){animation-delay:.28s;}
+.hero-inner>*:nth-child(7){animation-delay:.33s;}
+
+@media(max-width:500px){
+  .footer-in{flex-direction:column;}
+  .pb-div{display:none;}
+  .pb-item{padding:5px 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- AUDIENCE POPUP -->
+<div class="popup-overlay" id="audiencePopup">
+  <div class="popup-box">
+    <div class="popup-logo">Local<span>Big</span></div>
+    <div class="popup-q">Are you a…</div>
+    <div class="popup-sub">We'll personalise your page based on your business type.</div>
+    <div class="popup-choices">
+      <button class="popup-btn" onclick="setAudience('franchise')">
+        <div class="popup-icon">🏢</div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Franchise Operator</span>
+          <span class="popup-btn-sub">I operate 1 or more franchise locations</span>
+        </div>
+        <span style="margin-left:auto;font-size:18px;opacity:.4;">→</span>
+      </button>
+      <button class="popup-btn" onclick="setAudience('independent')">
+        <div class="popup-icon">🏪</div>
+        <div class="popup-btn-text">
+          <span class="popup-btn-title">Independent Business</span>
+          <span class="popup-btn-sub">I run my own standalone local business</span>
+        </div>
+        <span style="margin-left:auto;font-size:18px;opacity:.4;">→</span>
+      </button>
+    </div>
+    <span class="popup-skip" onclick="setAudience('franchise')">Skip — show me everything</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <div class="logo">Local<span>Big</span></div>
+    <div class="nav-right">
+      <a href="tel:+1" class="nav-cta">☎️ Book A Call</a>
+      <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- NAV DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-links">
+    <a href="#problems" onclick="closeMenu()">Pain Points</a>
+    <a href="#cases" onclick="closeMenu()">Case Studies</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#system" onclick="closeMenu()">The System</a>
+    <a href="#join" onclick="closeMenu()">Pricing</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#join" class="nav-drawer-cta" onclick="closeMenu()">Get Your 60-Day Growth Plan →</a>
+  </div>
+</div>
+<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+<!-- AUDIENCE SWITCHER BAR -->
+<div class="audience-bar">
+  <div class="audience-bar-in">
+    <span class="ab-label">I am a:</span>
+    <div class="ab-tabs">
+      <div class="ab-tab" id="tab-independent" onclick="setAudience('independent')">🏪 Local Business</div>
+      <div class="ab-tab active" id="tab-franchise" onclick="setAudience('franchise')">🏢 Franchise Owner</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+
+    <div class="live-badge">
+      <div class="live-dot" style="background:var(--red-bright);"></div>
+      Limited Seats Available
+    </div>
+
+    <!-- FRANCHISE HERO -->
+    <div class="aud-franchise">
+      <h1 class="hero-h1 franchise-h1">
+        Same Brand.<br>
+        <span class="hl-stop">Same National Ads.</span><br>
+        Your Local Location <em><span class="hl-chains">Deserves Better.</span></em>
+      </h1>
+      <p class="hero-franchise-sub">Localize Your Marketing.<br><strong>Own Your Market.</strong></p>
+      <div class="comp-strip">
+        <span class="comp-label">The competition you're up against</span>
+        <div class="comp-logos">
+          <div class="cli"><img src="https://logo.clearbit.com/mcdonalds.com" alt="McDonald's" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/starbucks.com" alt="Starbucks" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/cvs.com" alt="CVS" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/walmart.com" alt="Walmart" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/subway.com" alt="Subway" /></div>
+        </div>
+      </div>
+      <div class="hero-cta-wrap">
+        <a href="#join" class="btn-primary btn-franchise">Dominate Your Local Market in 60-Days →</a>
+        <p class="cta-sub"><a href="#faq">*See how our 60-Day Growth Promise works</a></p>
+      </div>
+    </div>
+
+    <!-- INDEPENDENT HERO -->
+    <div class="aud-independent">
+      <h1 class="hero-h1">
+        <span class="hl-stop">Stop Losing</span><br>
+        Your Local Customers<br>
+        <em><span class="hl-chains">To Big-Chains.</span></em>
+      </h1>
+      <p class="hero-guarantee">
+        <span class="hl-gcta">Get New Customers</span> in 60-Days, <span class="guarantee-grey" id="guarGrey">For Your Local Business*</span>
+      </p>
+      <div class="comp-strip">
+        <span class="comp-label">The competition you're up against</span>
+        <div class="comp-logos">
+          <div class="cli"><img src="https://logo.clearbit.com/mcdonalds.com" alt="McDonald's" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/starbucks.com" alt="Starbucks" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/cvs.com" alt="CVS" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/walmart.com" alt="Walmart" /></div>
+          <div class="cli"><img src="https://logo.clearbit.com/subway.com" alt="Subway" /></div>
+        </div>
+      </div>
+      <div class="hero-cta-wrap">
+        <a href="#join" class="btn-primary">Get Your 60-Day Growth Plan →</a>
+        <p class="cta-sub"><a href="#faq">*See how our 60-Day Growth Promise works</a></p>
+      </div>
+    </div>
+
+    <!-- 85 CUSTOMERS ADS SECTION -->
+    <div class="ads-proof">
+      <div class="ads-latest-tag">🔥 Latest Achievement</div>
+      <div class="ads-proof-title">85 New Customers<br>In <em>3 Days</em> With These 2 Ads</div>
+      <div class="ads-grid">
+        <!-- Ad 1 — fully visible, no lock -->
+        <div class="ad-card ad-visible">
+          <div class="ad-placeholder">
+            <div class="ad-inner-label">
+              <div class="ad-tag">Ad #1</div>
+              <div class="ad-ph-text">Krispy Krunchy<br>Campaign Creative</div>
+            </div>
+          </div>
+          <div class="ad-foot">
+            <div class="ad-metric"><span>42</span> customers</div>
+            <div class="ad-metric-label">from this ad</div>
+          </div>
+        </div>
+        <!-- Ad 2 — locked + blurred -->
+        <div class="ad-card ad-locked">
+          <div class="ad-placeholder ad-blur" style="position:relative;">
+            <div class="ad-inner-label">
+              <div class="ad-tag">Ad #2</div>
+              <div class="ad-ph-text">Krispy Krunchy<br>Campaign Creative</div>
+            </div>
+            <div class="ad-lock-overlay">
+              <button class="ad-lock-btn" onclick="unlockAd()">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </button>
+              <div class="ad-lock-label">Unlock to View Ad Setup</div>
+            </div>
+          </div>
+          <div class="ad-foot">
+            <div class="ad-metric"><span>43</span> customers</div>
+            <div class="ad-metric-label">from this ad</div>
+          </div>
+        </div>
+      </div>
+      <a href="#join" class="ads-unlock-cta" id="adsUnlockCta" onclick="unlockAd(); return false;">
+        🔓 View Ad Setup Behind This Campaign
+      </a>
+      <div class="ads-result-note">85 new customers · 3 days · $0 organic reach</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar-in">
+    <div class="pb-item"><span class="stars">★★★★★</span> 4.9/5 Rating</div>
+    <div class="pb-div"></div>
+    <div class="pb-item">Franchise &amp; Local Operators</div>
+    <div class="pb-div"></div>
+    <div class="pb-item">Results in 60 Days</div>
+    <div class="pb-div"></div>
+    <div class="pb-item">100% Done For You</div>
+  </div>
+</div>
+
+<!-- PROBLEMS WIDGET -->
+<section class="section" id="problems" style="background:var(--light);padding:80px 28px;">
+  <div class="wrap">
+    <span class="section-label prob-eyebrow">Sound Like Your Business?</span>
+    <h2 class="section-title xxl">Where Do You Feel<br><em>The Most Pain?</em></h2>
+
+    <div class="pain-widget">
+      <div class="pw-intro">I am...</div>
+      <div class="pw-grid">
+        <button class="pw-item" onclick="selectPain(this, 'launch')">
+          <div class="pw-icon">🚀</div>
+          <div class="pw-label">Launching a<br>New Location</div>
+          <div class="pw-arrow">→</div>
+        </button>
+        <button class="pw-item" onclick="selectPain(this, 'foottraffic')">
+          <div class="pw-icon">🚶</div>
+          <div class="pw-label">Getting No<br>Foot Traffic</div>
+          <div class="pw-arrow">→</div>
+        </button>
+        <button class="pw-item" onclick="selectPain(this, 'views')">
+          <div class="pw-icon">🎬</div>
+          <div class="pw-label">Getting Views,<br>But No Walk-Ins</div>
+          <div class="pw-arrow">→</div>
+        </button>
+        <button class="pw-item" onclick="selectPain(this, 'ads')">
+          <div class="pw-icon">💸</div>
+          <div class="pw-label">Losing Money<br>on Ads</div>
+          <div class="pw-arrow">→</div>
+        </button>
+        <button class="pw-item" onclick="selectPain(this, 'churn')">
+          <div class="pw-icon">😤</div>
+          <div class="pw-label">Losing<br>Customers</div>
+          <div class="pw-arrow">→</div>
+        </button>
+      </div>
+
+      <!-- PAIN LEAD FORMS -->
+
+      <!-- LAUNCH -->
+      <div class="pw-answer" id="pa-launch">
+        <div class="pa-icon">🚀</div>
+        <div class="pa-title">Launching a New Location</div>
+        <p class="pa-body">We launched 2 Taza2Go locations simultaneously — zero to foot traffic in 30 days. Tell us about your launch and we'll build your custom plan.</p>
+        <div class="pf-form" id="pf-launch">
+          <div class="pf-fields">
+            <div class="pf-row"><input class="pf-in" type="text" placeholder="Business name" /><input class="pf-in" type="text" placeholder="Your name" /></div>
+            <div class="pf-row"><input class="pf-in" type="email" placeholder="Email address" /><input class="pf-in" type="tel" placeholder="Phone number" /></div>
+            <input class="pf-in" type="text" placeholder="Business address / city" />
+            <select class="pf-in pf-sel">
+              <option value="" disabled selected>Estimated launch budget</option>
+              <option>Under $2,000/mo</option>
+              <option>$2,000 – $5,000/mo</option>
+              <option>$5,000 – $10,000/mo</option>
+              <option>$10,000+/mo</option>
+            </select>
+          </div>
+          <button class="pf-btn" onclick="submitPain('launch')">Get My Launch Plan →</button>
+          <p class="pf-note">We review every application within 24 hours.</p>
+        </div>
+        <div class="pf-result" id="pr-launch">
+          <div class="pr-title">Based on your launch, here's what we recommend:</div>
+          <div class="pr-cards">
+            <div class="pr-card" onclick="choosePlan(this, 'launch', '60day')">
+              <div class="pr-badge">Recommended</div>
+              <div class="pr-icon">📍</div>
+              <div class="pr-name">60-Day Growth Plan</div>
+              <div class="pr-price">$1,500<span>/mo</span></div>
+              <div class="pr-desc">Full launch playbook — Google, ads, content, loyalty. Results in 60 days.</div>
+            </div>
+            <div class="pr-card" onclick="choosePlan(this, 'launch', 'kickoff')">
+              <div class="pr-icon">🔥</div>
+              <div class="pr-name">Kickoff Campaign</div>
+              <div class="pr-price">$5,000<span> one-time</span></div>
+              <div class="pr-desc">One-time full launch blast — brand setup, Google, Meta ads, social. Done in 30 days.</div>
+            </div>
+          </div>
+          <a href="#join" class="pr-cta">Apply for Your Chosen Plan →</a>
+        </div>
+      </div>
+
+      <!-- FOOT TRAFFIC -->
+      <div class="pw-answer" id="pa-foottraffic">
+        <div class="pa-icon">🚶</div>
+        <div class="pa-title">Getting No Foot Traffic</div>
+        <p class="pa-body">Krispy Krunchy went from invisible to #1 in 60 days. Tell us about your location and we'll map your fastest path to customers walking in.</p>
+        <div class="pf-form" id="pf-foottraffic">
+          <div class="pf-fields">
+            <div class="pf-row"><input class="pf-in" type="text" placeholder="Business name" /><input class="pf-in" type="text" placeholder="Your name" /></div>
+            <div class="pf-row"><input class="pf-in" type="email" placeholder="Email address" /><input class="pf-in" type="tel" placeholder="Phone number" /></div>
+            <input class="pf-in" type="text" placeholder="Business address / city" />
+          </div>
+          <button class="pf-btn" onclick="submitPain('foottraffic')">Get My Foot Traffic Plan →</button>
+          <p class="pf-note">We review every application within 24 hours.</p>
+        </div>
+        <div class="pf-result" id="pr-foottraffic">
+          <div class="pr-title">Here's what we recommend for your foot traffic problem:</div>
+          <div class="pr-cards">
+            <div class="pr-card" onclick="choosePlan(this, 'foottraffic', '60day')">
+              <div class="pr-badge">Start Here</div>
+              <div class="pr-icon">🚀</div>
+              <div class="pr-name">60-Day Local Growth Program</div>
+              <div class="pr-price">$1,500<span>/mo</span></div>
+              <div class="pr-desc">Audit → Google → Ads → Results. Measurable foot traffic in 60 days or we keep working free.</div>
+            </div>
+            <div class="pr-card" onclick="choosePlan(this, 'foottraffic', 'domination')">
+              <div class="pr-icon">📍</div>
+              <div class="pr-name">Local Domination</div>
+              <div class="pr-price">$2,750<span>/mo</span></div>
+              <div class="pr-desc">Full market takeover — 16 posts/mo, geo-fencing, full Meta + Google, loyalty system.</div>
+            </div>
+          </div>
+          <a href="#join" class="pr-cta">Apply for Your Chosen Plan →</a>
+        </div>
+      </div>
+
+      <!-- VIEWS / ADS / CHURN — shared form, same plans -->
+      <div class="pw-answer" id="pa-views">
+        <div class="pa-icon">🎬</div>
+        <div class="pa-title">Getting Views But No Walk-Ins</div>
+        <p class="pa-body">Views that don't convert are just noise. The StoryAds framework turns digital attention into real foot traffic. Tell us about your business.</p>
+        <div class="pf-form" id="pf-views">
+          <div class="pf-fields">
+            <div class="pf-row"><input class="pf-in" type="text" placeholder="Business name" /><input class="pf-in" type="text" placeholder="Your name" /></div>
+            <div class="pf-row"><input class="pf-in" type="email" placeholder="Email address" /><input class="pf-in" type="tel" placeholder="Phone number" /></div>
+            <input class="pf-in" type="text" placeholder="Business address / city" />
+          </div>
+          <button class="pf-btn" onclick="submitPain('views')">Get My Growth Plan →</button>
+          <p class="pf-note">We review every application within 24 hours.</p>
+        </div>
+        <div class="pf-result" id="pr-views">
+          <div class="pr-title">Based on your situation, we recommend:</div>
+          <div class="pr-cards">
+            <div class="pr-card" onclick="choosePlan(this, 'views', 'domination')">
+              <div class="pr-badge">Recommended</div>
+              <div class="pr-icon">📍</div>
+              <div class="pr-name">Local Domination</div>
+              <div class="pr-price">$2,750<span>/mo</span></div>
+              <div class="pr-desc">Full StoryAds + geo-fencing + Meta + loyalty — turning views into a walk-in machine.</div>
+            </div>
+            <div class="pr-card" onclick="choosePlan(this, 'views', 'year')">
+              <div class="pr-icon">🏆</div>
+              <div class="pr-name">1-Year Plan</div>
+              <div class="pr-price">$5,000<span>/mo</span></div>
+              <div class="pr-desc">Multi-location growth. Full regional playbook. Compound results over 12 months.</div>
+            </div>
+          </div>
+          <a href="#join" class="pr-cta">Apply for Your Chosen Plan →</a>
+        </div>
+      </div>
+
+      <div class="pw-answer" id="pa-ads">
+        <div class="pa-icon">💸</div>
+        <div class="pa-title">Losing Money on Ads</div>
+        <p class="pa-body">Bad ad targeting is expensive. Our hyperlocal campaigns target buyers within miles of your door — not the wrong zip code. Let's audit yours.</p>
+        <div class="pf-form" id="pf-ads">
+          <div class="pf-fields">
+            <div class="pf-row"><input class="pf-in" type="text" placeholder="Business name" /><input class="pf-in" type="text" placeholder="Your name" /></div>
+            <div class="pf-row"><input class="pf-in" type="email" placeholder="Email address" /><input class="pf-in" type="tel" placeholder="Phone number" /></div>
+            <input class="pf-in" type="text" placeholder="Business address / city" />
+          </div>
+          <button class="pf-btn" onclick="submitPain('ads')">Fix My Ad Spend →</button>
+          <p class="pf-note">We review every application within 24 hours.</p>
+        </div>
+        <div class="pf-result" id="pr-ads">
+          <div class="pr-title">Based on your situation, we recommend:</div>
+          <div class="pr-cards">
+            <div class="pr-card" onclick="choosePlan(this, 'ads', 'domination')">
+              <div class="pr-badge">Recommended</div>
+              <div class="pr-icon">📍</div>
+              <div class="pr-name">Local Domination</div>
+              <div class="pr-price">$2,750<span>/mo</span></div>
+              <div class="pr-desc">We rebuild your campaigns from scratch — hyperlocal targeting that actually drives foot traffic.</div>
+            </div>
+            <div class="pr-card" onclick="choosePlan(this, 'ads', 'year')">
+              <div class="pr-icon">🏆</div>
+              <div class="pr-name">1-Year Plan</div>
+              <div class="pr-price">$5,000<span>/mo</span></div>
+              <div class="pr-desc">Multi-location ad management + full regional growth system across all your markets.</div>
+            </div>
+          </div>
+          <a href="#join" class="pr-cta">Apply for Your Chosen Plan →</a>
+        </div>
+      </div>
+
+      <div class="pw-answer" id="pa-churn">
+        <div class="pa-icon">😤</div>
+        <div class="pa-title">Losing Customers</div>
+        <p class="pa-body">Norwich Pharmacy stopped bleeding regulars with a loyalty system we built in 60 days. Tell us about your retention problem.</p>
+        <div class="pf-form" id="pf-churn">
+          <div class="pf-fields">
+            <div class="pf-row"><input class="pf-in" type="text" placeholder="Business name" /><input class="pf-in" type="text" placeholder="Your name" /></div>
+            <div class="pf-row"><input class="pf-in" type="email" placeholder="Email address" /><input class="pf-in" type="tel" placeholder="Phone number" /></div>
+            <input class="pf-in" type="text" placeholder="Business address / city" />
+          </div>
+          <button class="pf-btn" onclick="submitPain('churn')">Fix My Retention →</button>
+          <p class="pf-note">We review every application within 24 hours.</p>
+        </div>
+        <div class="pf-result" id="pr-churn">
+          <div class="pr-title">Based on your situation, we recommend:</div>
+          <div class="pr-cards">
+            <div class="pr-card" onclick="choosePlan(this, 'churn', 'domination')">
+              <div class="pr-badge">Recommended</div>
+              <div class="pr-icon">📍</div>
+              <div class="pr-name">Local Domination</div>
+              <div class="pr-price">$2,750<span>/mo</span></div>
+              <div class="pr-desc">Full loyalty system + automated win-back campaigns + Meta retargeting. Stop the bleed.</div>
+            </div>
+            <div class="pr-card" onclick="choosePlan(this, 'churn', 'year')">
+              <div class="pr-icon">🏆</div>
+              <div class="pr-name">1-Year Plan</div>
+              <div class="pr-price">$5,000<span>/mo</span></div>
+              <div class="pr-desc">Centralized loyalty across all locations + multi-market retention strategy.</div>
+            </div>
+          </div>
+          <a href="#join" class="pr-cta">Apply for Your Chosen Plan →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases">
+  <div class="wrap">
+    <span class="section-label">📍 Real Businesses · Real Markets · Real Results</span>
+    <h2 class="section-title xxl">Grow Your Location.<br><em>Own Your Market.</em></h2>
+    <div class="cases-grid">
+
+      <!-- CASE 0: TAZA2GO — NEW LOCATION LAUNCH -->
+      <div class="case-item">
+        <div class="case-meta">
+          <div class="case-lbl">Taza2Go · Multi-Location Franchise Launch</div>
+          <div class="case-vs">New Location Launch · New Media Presence</div>
+          <div class="case-title">Zero to Launch:<br>2 Markets in 30 Days</div>
+        </div>
+        <div class="ba-toggle">
+          <div class="ba-tabs">
+            <button class="ba-tab t-before" id="t0b" onclick="tab(0,'b')"><span class="dot"></span>Before</button>
+            <button class="ba-tab t-after" id="t0a" onclick="tab(0,'a')"><span class="dot"></span>After 30 Days</button>
+          </div>
+          <div class="ba-panel" id="p0b">
+            <div class="bm">
+              <div class="bm-bar"><div class="bm-dots"><div class="bm-dot"></div><div class="bm-dot"></div><div class="bm-dot"></div></div><div class="bm-url"></div></div>
+              <div class="bm-scroll"><div class="bm-inner">
+                <div class="bm-badge">Zero Google Presence</div>
+                <div class="bm-maps"><div class="bm-pin"><div class="bm-pd"></div><div class="bm-pl" style="width:30%"></div></div><div class="bm-pin" style="opacity:.2"><div class="bm-pd"></div><div class="bm-pl" style="width:20%"></div></div></div>
+                <div class="bm-r s"></div><div class="bm-r ac"></div>
+                <div class="bm-badge">No Social Presence</div>
+                <div class="bm-r img"></div><div class="bm-r s"></div><div class="bm-r m"></div>
+                <div class="bm-badge">Zero Brand Awareness</div>
+                <div class="bm-r w"></div><div class="bm-r ac"></div><div class="bm-r s"></div>
+                <div class="bm-maps"><div class="bm-pin" style="opacity:.15"><div class="bm-pd"></div><div class="bm-pl" style="width:25%"></div></div></div>
+                <div class="bm-r m"></div><div class="bm-r img"></div>
+              </div></div>
+            </div>
+          </div>
+          <div class="ba-panel show" id="p0a">
+            <div class="after-panel" style="background:linear-gradient(145deg,#0a0f18,#0d1a12);">
+              <div class="ap-wm">30d</div>
+              <div class="ap-cap"><div class="ap-label">↑ Foot Traffic · Both Locations Live</div><div class="ap-title">Results Coming Soon →</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-stats">
+          <div class="cs"><div class="cs-n">2</div><div class="cs-l">Markets Launched</div></div>
+          <div class="cs"><div class="cs-n">30d</div><div class="cs-l">To Foot Traffic</div></div>
+          <div class="cs"><div class="cs-n">0→∞</div><div class="cs-l">Digital Presence</div></div>
+        </div>
+        <div class="case-body">
+          <p class="case-story">A new halal restaurant concept entering two competitive CT markets simultaneously — zero brand recognition, zero digital presence, zero social following. <strong>We built their complete local digital infrastructure, launched full Google + Meta campaigns, and drove measurable foot traffic to both locations within 30 days of opening.</strong> From invisible to known — before most restaurants find their footing.</p>
+        </div>
+        <div class="case-locs"><span class="loc">📍 Mystic, CT</span><span class="loc">📍 Niantic, CT</span></div>
+      </div>
+
+      <!-- CASE 1: KRISPY KRUNCHY -->
+      <div class="case-item">
+        <div class="case-meta">
+          <div class="case-lbl">Krispy Krunchy Chicken · Franchise Operator</div>
+          <div class="case-title">From Zero Digital Presence<br>to #1 in Local Market</div>
+        </div>
+        <div class="ba-toggle">
+          <div class="ba-tabs">
+            <button class="ba-tab t-before" id="t1b" onclick="tab(1,'b')"><span class="dot"></span>Before</button>
+            <button class="ba-tab t-after" id="t1a" onclick="tab(1,'a')"><span class="dot"></span>After 60 Days</button>
+          </div>
+          <div class="ba-panel" id="p1b">
+            <div class="bm">
+              <div class="bm-bar"><div class="bm-dots"><div class="bm-dot"></div><div class="bm-dot"></div><div class="bm-dot"></div></div><div class="bm-url"></div></div>
+              <div class="bm-scroll"><div class="bm-inner">
+                <div class="bm-badge">Ranked #9 · Google Maps</div>
+                <div class="bm-maps"><div class="bm-pin"><div class="bm-pd"></div><div class="bm-pl" style="width:55%"></div></div><div class="bm-pin" style="opacity:.4"><div class="bm-pd"></div><div class="bm-pl" style="width:68%"></div></div><div class="bm-pin" style="opacity:.18"><div class="bm-pd"></div><div class="bm-pl" style="width:40%"></div></div></div>
+                <div class="bm-r w"></div><div class="bm-r m"></div><div class="bm-r img"></div><div class="bm-r s"></div><div class="bm-r ac"></div><div class="bm-r w"></div>
+                <div class="bm-badge">No Loyalty System</div>
+                <div class="bm-r img"></div><div class="bm-r w"></div><div class="bm-r m"></div>
+                <div class="bm-maps"><div class="bm-pin"><div class="bm-pd"></div><div class="bm-pl" style="width:50%"></div></div><div class="bm-pin" style="opacity:.22"><div class="bm-pd"></div><div class="bm-pl" style="width:35%"></div></div></div>
+                <div class="bm-r w"></div><div class="bm-r ac"></div>
+              </div></div>
+            </div>
+          </div>
+          <div class="ba-panel show" id="p1a">
+            <div class="after-panel ap-1">
+              <div class="ap-wm">10x</div>
+              <div class="ap-cap"><div class="ap-label">↑ #1 Local Market · 3x Digital Sales</div><div class="ap-title">Full Case Study Coming →</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-stats">
+          <div class="cs"><div class="cs-n">#1</div><div class="cs-l">Local Market</div></div>
+          <div class="cs"><div class="cs-n">3x</div><div class="cs-l">Digital Sales</div></div>
+          <div class="cs"><div class="cs-n">10x</div><div class="cs-l">Local Reach</div></div>
+        </div>
+        <div class="case-body">
+          <p class="case-story">A franchise operator with two locations and zero digital presence — losing foot traffic to every nearby competitor. <strong>We built their entire local digital footprint, launched hyperlocal StoryAds, and grew them to #1 in their local market in 60 days.</strong> Digital sales tripled. Both locations running at capacity.</p>
+        </div>
+        <div class="case-locs"><span class="loc">📍 Norwich, CT</span><span class="loc">📍 Willimantic, CT</span></div>
+      </div>
+
+      <button class="see-more" id="seeMoreBtn" onclick="toggleMore()">
+        <span id="seeMoreLabel">See More Before &amp; Afters</span>
+        <span class="sm-arr">▾</span>
+      </button>
+    </div>
+
+    <div class="hidden-cases" id="hiddenCases">
+      <div class="mini-case">
+        <div class="mc-ey">Case #3 · Norwich Pharmacy</div>
+        <div class="mc-h">Building a Loyal Customer Base</div>
+        <div class="mc-loc">📍 Norwich, CT</div>
+        <p class="mc-b">A regional pharmacy with high churn and zero retention strategy. We launched Meta campaigns, built a branded loyalty system, and turned their personal service into a competitive advantage. <strong>Repeat visit rate improved significantly within 60 days.</strong></p>
+        <div class="mc-r">↑ Repeat Visits Up · Loyalty System Live</div>
+      </div>
+      <div class="mini-case">
+        <div class="mc-ey">Case #4 · Spice &amp; Slice</div>
+        <div class="mc-h">Owning a Niche No Competitor Could Copy</div>
+        <div class="mc-loc">📍 Norwich, CT</div>
+        <p class="mc-b">A halal grocery needing to own their niche. We built their brand, a cultural content series, and a <strong>"SCAN TO VERIFY"</strong> QR campaign turning their standards into the #1 reason locals chose them.</p>
+        <div class="mc-r">↑ 10x Local Reach · Cultural Market Owned</div>
+      </div>
+    </div>
+
+    <!-- NORWICH PHARMACY — 16:9 landscape case study -->
+    <div class="case-wide">
+      <div class="cw-meta">
+        <div class="cw-label">Norwich Pharmacy · Independent Operator · Norwich, CT</div>
+        <div class="cw-title">Building a Loyal<br>Customer Base</div>
+        <div class="cw-sub">Turned weekly customer churn into a measurable retention advantage — in 60 days.</div>
+      </div>
+      <div class="cw-toggle">
+        <div class="cw-tabs">
+          <button class="cw-tab cw-before" id="ct3b" onclick="tabW(3,'b')"><span class="dot"></span>Before</button>
+          <button class="cw-tab cw-after" id="ct3a" onclick="tabW(3,'a')"><span class="dot"></span>After 60 Days</button>
+        </div>
+        <div class="cw-panel show" id="cp3b">
+          <div class="bm" style="background:#0F0B1A;">
+            <div class="bm-bar"><div class="bm-dots"><div class="bm-dot"></div><div class="bm-dot"></div><div class="bm-dot"></div></div><div class="bm-url"></div></div>
+            <div class="bm-scroll"><div class="bm-inner">
+              <div class="bm-badge">No Retention System · High Churn</div>
+              <div class="bm-r img"></div><div class="bm-r w"></div><div class="bm-r m"></div><div class="bm-r ac"></div>
+              <div class="bm-maps"><div class="bm-pin"><div class="bm-pd"></div><div class="bm-pl" style="width:60%"></div></div><div class="bm-pin" style="opacity:.3"><div class="bm-pd"></div><div class="bm-pl" style="width:42%"></div></div></div>
+              <div class="bm-r s"></div><div class="bm-r w"></div>
+              <div class="bm-badge">No Loyalty System</div>
+              <div class="bm-r img"></div><div class="bm-r w"></div><div class="bm-r m"></div><div class="bm-r ac"></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="cw-panel" id="cp3a">
+          <div class="after-panel ap-2" style="width:100%;height:100%;">
+            <div class="ap-wm">60d</div>
+            <div class="ap-cap"><div class="ap-label">↑ Repeat Visits Up · Loyalty Live · Meta Ads Running</div><div class="ap-title">Full Case Study Coming →</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cw-stats">
+        <div class="cw-stat"><div class="cw-n">↑↑</div><div class="cw-l">Repeat Visits</div></div>
+        <div class="cw-stat"><div class="cw-n">Live</div><div class="cw-l">Meta Ads</div></div>
+        <div class="cw-stat"><div class="cw-n">60d</div><div class="cw-l">To Results</div></div>
+        <div class="cw-stat"><div class="cw-n">0→✓</div><div class="cw-l">Loyalty System</div></div>
+      </div>
+      <div class="cw-body">
+        <p class="case-story">A regional pharmacy with high churn and no retention strategy — first-time visitors weren't returning. <strong>We launched Meta campaigns, built a branded loyalty system, and turned their personal service into a measurable competitive advantage.</strong> Repeat visit rate improved significantly within 60 days. Customers who would have switched are now regulars.</p>
+        <div class="cw-loc">📍 Norwich, CT</div>
+      </div>
+    </div>
+
+    <!-- VERTICAL VIDEO PLACEHOLDERS -->
+    <div class="vp-grid">
+      <div class="vp-card">
+        <div class="vp-thumb">
+          <div class="vp-wm">🌶️</div>
+          <div class="vp-cap">
+            <div class="vp-label">Case Study · Spice &amp; Slice</div>
+            <div class="vp-title">Owning a Niche<br>No Competitor Could Copy</div>
+            <div class="vp-coming">📍 Norwich, CT · Full Video Coming Soon</div>
+          </div>
+        </div>
+      </div>
+      <div class="vp-card">
+        <div class="vp-thumb" style="background:linear-gradient(145deg,#051a0a,#0a2a14);">
+          <div class="vp-wm">🌙</div>
+          <div class="vp-cap">
+            <div class="vp-label">Case Study · Green Crescent Clinic</div>
+            <div class="vp-title">Building a Consistent<br>Patient Base</div>
+            <div class="vp-coming">📍 Connecticut · Full Video Coming Soon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="section" style="background:var(--light);padding:64px 28px;">
+  <div class="wrap">
+    <div class="wwith-block">
+      <div class="wwith-label">The Franchises We Are Working With</div>
+      <div class="wwith-logos">
+        <div class="wwith-logo"><img src="https://logo.clearbit.com/krispykrunchy.com" alt="Krispy Krunchy" /></div>
+        <div class="wwith-logo"><img src="https://logo.clearbit.com/subwayrestaurants.com" alt="Subway" /></div>
+        <div class="wwith-logo"><img src="https://logo.clearbit.com/cinnabon.com" alt="Cinnabon" /></div>
+      </div>
+    </div>
+    <div class="wwith-divider"></div>
+    <div class="wwith-block">
+      <div class="wwith-label">The Local Operations We Are Working With</div>
+      <div class="wwith-logos">
+        <div class="wwith-logo wwith-text">Norwich<br>Pharmacy</div>
+        <div class="wwith-logo wwith-text">Spice<br>&amp; Slice</div>
+        <div class="wwith-logo wwith-text">Taza<br>2Go</div>
+        <div class="wwith-logo wwith-text">Local<br>Operator</div>
+        <div class="wwith-more">+ Many More</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" style="background:var(--light);padding-top:80px;">
+  <div class="wrap">
+    <span class="section-label">What our clients say</span>
+    <h2 class="section-title">Real Results.<br><em>Real Businesses.</em></h2>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="quote-text">"Biggie's team grew our local presence in Norwich & Willimantic by 10x, setting us up for 3x digital sales. We went from nobody knowing us to the #1 spot in our local market — in 60 days."</p>
+        <div class="quote-attr">
+          <div class="qa-dot"></div>
+          <span class="qa-name">Franchise Manager · Krispy Krunchy Chicken · Norwich &amp; Willimantic, CT</span>
+          <div class="qa-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">"We went from losing repeat customers every week to a full loyalty system running and more people coming back consistently. The difference was clear within 60 days."</p>
+        <div class="quote-attr">
+          <div class="qa-dot"></div>
+          <span class="qa-name">Owner · Norwich Pharmacy · Norwich, CT</span>
+          <div class="qa-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section class="offer-section">
+  <div class="offer-inner">
+    <span class="offer-ey">The System</span>
+    <h2 class="offer-h">The 60-Day<br><em>Local Growth Program</em></h2>
+    <p class="offer-desc">Not an agency retainer. A <strong>plug-and-play growth system</strong> — AI-customized for your business type, market, and biggest problem. Built for franchise operators and standalone local businesses. Year-long program. Results in 60 days.</p>
+    <div class="how-steps-dark" style="margin-bottom:32px;">
+      <div class="hs"><div class="hs-n">1</div><div class="hs-lbl">Apply<br>to Join</div><div class="hs-sub">2 min form</div></div>
+      <div class="hs"><div class="hs-n">2</div><div class="hs-lbl">We Build<br>Your System</div><div class="hs-sub">AI-scoped</div></div>
+      <div class="hs"><div class="hs-n">3</div><div class="hs-lbl">Launch<br>&amp; Grow</div><div class="hs-sub">Done for you</div></div>
+      <div class="hs"><div class="hs-n">4</div><div class="hs-lbl">See Results<br>or Free*</div><div class="hs-sub">60-day min</div></div>
+    </div>
+    <div class="offer-cards">
+      <div class="oc"><div class="oc-icon">📍</div><div><div class="oc-title">Local Market Domination</div><div class="oc-desc">Google Business + Maps optimization and local SEO — so your location shows up first when someone searches nearby.</div></div></div>
+      <div class="oc"><div class="oc-icon">🎬</div><div><div class="oc-title">StoryAds Content Engine</div><div class="oc-desc">Weekly story-driven content that stops the scroll and converts views into walk-ins — not just impressions.</div></div></div>
+      <div class="oc"><div class="oc-icon">🎯</div><div><div class="oc-title">Hyperlocal Ad Campaigns</div><div class="oc-desc">Meta + Google ads targeting buyers within miles of your door — people who are nearby and ready to visit.</div></div></div>
+      <div class="oc"><div class="oc-icon">💳</div><div><div class="oc-title">Loyalty &amp; Retention System</div><div class="oc-desc">Powered by FastnFresh — a branded app that turns one-time visitors into regulars, automatically.</div></div></div>
+      <div class="oc"><div class="oc-icon">📊</div><div><div class="oc-title">Weekly Performance Reports</div><div class="oc-desc">Plain-English reporting every week — what moved, what changed, what's next. No dashboards to decode.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guar-section">
+  <div class="guar-in">
+    <div class="guar-icon">🛡️</div>
+    <div>
+      <h3 class="guar-h">The 60-Day<br><em>Growth Promise</em></h3>
+      <p class="guar-body">We agree on specific, measurable targets before day one. <strong>If you don't see real growth within 60 days, we keep working at no extra charge until you do.</strong> Not a legal contract — a personal promise kept with every client.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="join">
+  <div class="pricing-inner">
+    <span class="section-label">Your Growth Journey</span>
+    <h2 class="section-title">Choose<br><em>Your Phase</em></h2>
+    <p style="font-size:14px;color:var(--gray);line-height:1.65;margin-bottom:32px;">Each phase builds on the last. Start with 60 days to see real results — then compound into local dominance over 6 months and a full year.</p>
+    <div class="p-cards">
+
+      <div class="pc">
+        <div class="pc-head">
+          <div class="pc-phase-tag">Phase 1</div>
+          <div class="pc-name">🚀 60-DAY GROWTH (Starter)</div>
+          <div class="pc-desc">For local operators ready to see real results fast. First 60 days — measurable growth or we keep working free.</div>
+        </div>
+        <div class="pc-price"><span class="pc-dollar">$</span><span class="pc-amt">1,500</span><span class="pc-per">/mo</span><span class="pc-min">· 60-day min</span></div>
+        <ul class="pc-feats">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Local market audit + opportunity map</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Google Business + Maps optimization</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>8 story-driven posts/month</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>1 hyperlocal ad campaign</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Customer loyalty system setup</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Weekly performance report</li>
+        </ul>
+        <div class="pc-foot"><a href="#join" class="btn-join">Get Your 60-Day Growth Plan →</a><p class="pc-note">We review every application &amp; confirm fit.</p></div>
+      </div>
+
+      <!-- KICKOFF ONE-TIME -->
+      <div class="pc pc-kickoff">
+        <div class="pc-head">
+          <div class="pc-phase-tag" style="color:#F59E0B;border-color:rgba(245,158,11,.3);">One-Time</div>
+          <div class="pc-name">🔥 KICKOFF CAMPAIGN</div>
+          <div class="pc-desc">New location opening or need a fast launchpad? One-time full-blast campaign — no monthly commitment.</div>
+        </div>
+        <div class="pc-price"><span class="pc-dollar">$</span><span class="pc-amt">5,000</span><span class="pc-per pc-onetime">one-time</span></div>
+        <ul class="pc-feats">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Full local brand setup &amp; Google presence</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>30-day Meta + Google launch campaign</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Social media presence built from scratch</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Opening week content package (10 posts)</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Loyalty system setup &amp; first campaign</li>
+        </ul>
+        <div class="pc-foot"><a href="#join" class="btn-join">Get the Kickoff Campaign →</a><p class="pc-note">No monthly commitment. Perfect for new location launches.</p></div>
+      </div>
+
+      <div class="pc feat">
+        <div class="pc-head">
+          <div class="pc-badge">⭐ Most Popular</div>
+          <div class="pc-phase-tag" style="color:var(--red-bright);border-color:rgba(255,80,60,.3);">Phase 2</div>
+          <div class="pc-name">📍 LOCAL DOMINATION</div>
+          <div class="pc-desc">6-month program. Own your local market — rank #1, fill your location, and make competitors irrelevant.</div>
+        </div>
+        <div class="pc-price"><span class="pc-dollar">$</span><span class="pc-amt">2,750</span><span class="pc-per">/mo</span><span class="pc-min">· 6-month program</span></div>
+        <ul class="pc-feats">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Everything in Phase 1</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>16 posts + Reels/month</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Full Meta + Google ad management</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Geo-fencing + proximity marketing</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Full loyalty + automated win-back</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-bright)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Bi-weekly strategy call</li>
+        </ul>
+        <div class="pc-foot"><a href="#join" class="btn-join">Get Your 60-Day Growth Plan →</a><p class="pc-note">Includes 60-Day Growth Promise · Limited spots/month</p></div>
+      </div>
+
+      <div class="pc">
+        <div class="pc-head">
+          <div class="pc-phase-tag">Phase 3</div>
+          <div class="pc-name">🏆 1-YEAR PLAN</div>
+          <div class="pc-desc">Full-year program after 6 months. Multi-location growth, regional dominance, and a system that runs itself.</div>
+        </div>
+        <div class="pc-price"><span class="pc-dollar">$</span><span class="pc-amt">5,000</span><span class="pc-per">/mo</span><span class="pc-min">· after Phase 2</span></div>
+        <ul class="pc-feats">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Everything in Phase 2</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Up to 4 locations managed</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Regional growth playbook</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Centralized loyalty across all locations</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="var(--red-light)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>Dedicated account manager + weekly call</li>
+        </ul>
+        <div class="pc-foot"><a href="#join" class="btn-join">Get Your 60-Day Growth Plan →</a><p class="pc-note">Unlocked after completing Phase 2.</p></div>
+      </div>
+
+      <!-- MULTI-LOCATION / FRANCHISE CUSTOM -->
+      <div class="pc pc-custom">
+        <div class="pc-head" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <div class="pc-custom-icon">🏢</div>
+          <div>
+            <div class="pc-custom-name">Multi-Location or Franchises</div>
+            <div class="pc-custom-sub">Running 2+ locations or a franchise network? We scope a custom plan around your number of locations, markets, and goals.</div>
+          </div>
+          <a href="#join" class="pc-custom-cta">Get Custom Pricing →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <span class="section-label">Questions</span>
+    <h2 class="section-title" style="margin-bottom:32px;">Everything you<br><em>need to know.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">Who is this built for?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Franchise operators (single or multi-location), independent local business owners, and regional brands. Whether you're running a Krispy Krunchy franchise, a local pharmacy, or launching a new location — if local customers matter to your revenue, this is built for you.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">What does the 60-Day Growth Promise mean?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Before we start, we agree on specific measurable targets — foot traffic, visibility, repeat customers. If we don't hit them in 60 days, we keep running your program at no extra charge until we do. It's the commitment we make to every client before day one.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">What does "done for you" actually mean?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">You don't touch any of it. We handle your Google setup, run your ad campaigns, create your content, build your loyalty system, and send a plain-English report weekly. You run your business. We grow your customer base.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">How is it customized to my business?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Our system uses your business type, location, revenue stage, and biggest problem to build a custom growth plan. A franchise operator in Norwich gets a completely different setup than a pharmacy in Mystic. Same framework — built specifically for your market.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">Can I cancel after 60 days?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. The minimum is 60 days — that's what it takes to build real momentum. After that, month-to-month with no penalties. Most clients stay once they see the results compound.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="faq(this)">Why only 3 new clients per month?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Every client gets a properly built system — not a rushed template. Capping intake means your setup gets full attention from day one. If we're at capacity, we'll put you on the waitlist and reach out when a spot opens.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section class="final-cta">
+  <div class="final-inner">
+    <span class="fc-ey">Limited to 3 New Businesses Per Month</span>
+    <h2 class="fc-h">Dominate Your Local Market,<br><span class="fc-chains-hl">Like The Big-Chains.</span></h2>
+    <p class="fc-sub">Tell us about your business and your biggest problem. We'll build your custom plan and reach out within 24 hours.</p>
+    <div class="lead-form">
+      <div class="lf-title">Apply to Join the 60-Day Program</div>
+      <div class="lf-sub">Takes 2 minutes. We review every application personally.</div>
+      <div class="lf-fields">
+        <div class="lf-row">
+          <input class="lf-input" type="text" placeholder="Your name" />
+          <input class="lf-input" type="tel" placeholder="Phone number" />
+        </div>
+        <input class="lf-input" type="text" placeholder="Business name &amp; city" />
+        <select class="lf-select">
+          <option value="" disabled selected>Business type</option>
+          <option>Franchise Operator (1 location)</option>
+          <option>Franchise Operator (2+ locations)</option>
+          <option>Independent Local Business</option>
+          <option>Restaurant / Food &amp; Beverage</option>
+          <option>Retail / Service</option>
+          <option>Other</option>
+        </select>
+        <select class="lf-select">
+          <option value="" disabled selected>Current annual revenue</option>
+          <option>$100K – $1M</option>
+          <option>$1M – $5M</option>
+          <option>$5M+</option>
+          <option>Franchise (multiple locations)</option>
+        </select>
+        <select class="lf-select">
+          <option value="" disabled selected>Biggest problem right now</option>
+          <option>Losing customers to nearby competitors</option>
+          <option>Not showing up on Google / Maps</option>
+          <option>Ads not driving local foot traffic</option>
+          <option>Customers don't come back</option>
+          <option>Low foot traffic</option>
+          <option>Launching a new location</option>
+          <option>Underperforming franchise location</option>
+        </select>
+        <button class="lf-btn" type="button">Get Your 60-Day Growth Plan →</button>
+      </div>
+      <p class="lf-note"><a href="#faq">*See how the 60-Day Growth Promise works</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-in">
+    <div>
+      <div class="footer-logo">Local<span>Big</span></div>
+      <div class="footer-tag">The 60-Day Local Growth Program for Franchise Operators &amp; Local Businesses.</div>
+    </div>
+    <div class="footer-col">
+      <label>Quick Links</label>
+      <div class="footer-links">
+        <a href="#">Case Studies</a>
+        <a href="#">Pricing</a>
+        <a href="#join">Join the Program</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <label>Contact</label>
+      <div class="footer-links">
+        <a href="mailto:hello@localbig.com">hello@localbig.com</a>
+        <a href="#join">Apply Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 LocalBig. All rights reserved.</span>
+    <span>Norwich · Willimantic · Mystic · Niantic, CT</span>
+  </div>
+</footer>
+
+<script>
+// Unlock ad
+function unlockAd(){
+  const placeholder = document.querySelector('.ad-locked .ad-placeholder');
+  const overlay = document.querySelector('.ad-lock-overlay');
+  const cta = document.getElementById('adsUnlockCta');
+  if(placeholder) placeholder.classList.remove('ad-blur');
+  if(overlay) overlay.style.display='none';
+  if(cta){ cta.innerHTML='✓ Ad Setup Unlocked — Apply to See Full Campaign'; cta.style.background='rgba(16,185,129,.15)'; cta.style.borderColor='rgba(16,185,129,.4)'; }
+}
+function tabW(id,p){
+  const pb=document.getElementById('cp'+id+'b'),pa=document.getElementById('cp'+id+'a');
+  const tb=document.getElementById('ct'+id+'b'),ta=document.getElementById('ct'+id+'a');
+  if(p==='b'){pb.classList.add('show');pa.classList.remove('show');tb.className='cw-tab cw-before';ta.className='cw-tab';}
+  else{pa.classList.add('show');pb.classList.remove('show');ta.className='cw-tab cw-after';tb.className='cw-tab';}
+}
+function tab(id,p){
+  const pb=document.getElementById('p'+id+'b'),pa=document.getElementById('p'+id+'a');
+  const tb=document.getElementById('t'+id+'b'),ta=document.getElementById('t'+id+'a');
+  if(p==='b'){pb.classList.add('show');pa.classList.remove('show');tb.className='ba-tab t-before';ta.className='ba-tab';}
+  else{pa.classList.add('show');pb.classList.remove('show');ta.className='ba-tab t-after';tb.className='ba-tab';}
+}
+function toggleMore(){
+  const btn=document.getElementById('seeMoreBtn'),h=document.getElementById('hiddenCases'),l=document.getElementById('seeMoreLabel');
+  const open=h.classList.contains('show');
+  h.classList.toggle('show');btn.classList.toggle('open');
+  l.innerHTML=open?'See More Before &amp; Afters':'Hide';
+}
+function faq(btn){
+  const item=btn.parentElement,isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// Hamburger menu
+function toggleMenu(){
+  document.getElementById('hamburgerBtn').classList.toggle('open');
+  document.getElementById('navDrawer').classList.toggle('open');
+  document.getElementById('navOverlay').classList.toggle('show');
+}
+function closeMenu(){
+  document.getElementById('hamburgerBtn').classList.remove('open');
+  document.getElementById('navDrawer').classList.remove('open');
+  document.getElementById('navOverlay').classList.remove('show');
+}
+
+// Pain widget
+function selectPain(el, key){
+  document.querySelectorAll('.pw-item').forEach(i=>i.classList.remove('active'));
+  document.querySelectorAll('.pw-answer').forEach(a=>{a.classList.remove('show');});
+  el.classList.add('active');
+  const ans = document.getElementById('pa-'+key);
+  if(ans){
+    ans.classList.add('show');
+    setTimeout(()=>ans.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  }
+}
+function submitPain(key){
+  const form = document.getElementById('pf-'+key);
+  const result = document.getElementById('pr-'+key);
+  if(form) form.style.display='none';
+  if(result) result.classList.add('show');
+}
+function choosePlan(el, key, plan){
+  document.querySelectorAll('#pr-'+key+' .pr-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// Audience switching
+const COPY = {
+  franchise: {liveText:'Limited Seats Available',guarGrey:'For Your Franchise Operation*'},
+  independent: {liveText:'Limited Seats Available',guarGrey:'For Your Local Business*'}
+};
+
+function setAudience(type) {
+  const popup = document.getElementById('audiencePopup');
+  popup.style.opacity = '0';
+  popup.style.transition = 'opacity .25s';
+  setTimeout(() => popup.style.display = 'none', 250);
+  document.body.classList.remove('is-franchise','is-independent');
+  document.body.classList.add('is-' + type);
+  document.getElementById('tab-franchise').classList.toggle('active', type === 'franchise');
+  document.getElementById('tab-independent').classList.toggle('active', type === 'independent');
+  const guarGrey = document.getElementById('guarGrey');
+  if(guarGrey) guarGrey.textContent = COPY[type].guarGrey;
+  try { localStorage.setItem('lb_audience', type); } catch(e){}
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  let saved;
+  try { saved = localStorage.getItem('lb_audience'); } catch(e){}
+  if(saved) {
+    document.getElementById('audiencePopup').style.display = 'none';
+    setAudience(saved);
+  } else {
+    document.getElementById('audiencePopup').style.display = 'none';
+    setTimeout(() => {
+      document.getElementById('audiencePopup').style.display = 'flex';
+    }, 800);
+  }
+});
+</script>
+</body>
+</html>
