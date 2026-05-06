@@ -1248,7 +1248,7 @@ export default function LocalBigPage() {
                   }
                   afterContent={
                     <CaseStudyVideo
-                      src="/Case%20Study%231%20Taza2go.mp4"
+                      src="/Data/case-study-1-taza2go-web.mp4"
                       wm="30d"
                       label="↑ Foot Traffic · Both Locations Live"
                       title="Results Coming Soon →"
@@ -1306,7 +1306,7 @@ export default function LocalBigPage() {
                   }
                   afterContent={
                     <CaseStudyVideo
-                      src="/Case%20study%232%20Krispy.mp4"
+                      src="/Data/case-study-2-krispy-web.mp4"
                       wm="10x"
                       label="↑ #1 Local Market · 3x Digital Sales"
                       title="Full Case Study Coming →"
@@ -1427,7 +1427,7 @@ export default function LocalBigPage() {
                 }
                 afterContent={
                   <CaseStudyVideo
-                    src="/Case%20Study%20%233%20Norwich%20Pharmacy.MOV"
+                    src="/Data/case-study-3-norwich-pharmacy-web.mp4"
                     wm="60d"
                     label="↑ Repeat Visits Up · Loyalty Live · Meta Ads Running"
                     title="Full Case Study Coming →"
@@ -1461,14 +1461,14 @@ export default function LocalBigPage() {
               {[
                 {
                   wm: '🌶️',
-                  videoSrc: '/Case%20Study%20%234%20Spice%20%26%20Slice.MOV',
+                  videoSrc: '/Data/case-study-4-spice-and-slice-web.mp4',
                   label: 'Case Study · Spice & Slice',
                   title: 'Owning a Niche\nNo Competitor Could Copy',
                   loc: '📍 Norwich, CT · Full Video Coming Soon',
                 },
                 {
                   wm: '🌙',
-                  videoSrc: '/Case%20Study%20%235%20Green%20Crescent.mp4',
+                  videoSrc: '/Data/case-study-5-green-crescent-web.mp4',
                   label: 'Case Study · Green Crescent Clinic',
                   title: 'Building a Consistent\nPatient Base',
                   loc: '📍 Connecticut · Full Video Coming Soon',
