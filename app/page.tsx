@@ -532,10 +532,65 @@ export default function LocalBigPage() {
     { q: 'Why only 3 new clients per month?', a: "Every client gets a properly built system — not a rushed template. Capping intake means your setup gets full attention from day one. If we're at capacity, we'll put you on the waitlist and reach out when a spot opens." },
   ];
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const areaServed = [
+    { '@type': 'State', name: 'Connecticut' },
+    { '@type': 'State', name: 'Massachusetts' },
+    { '@type': 'State', name: 'Rhode Island' },
+    { '@type': 'State', name: 'New Hampshire' },
+    { '@type': 'State', name: 'Vermont' },
+    { '@type': 'State', name: 'Maine' },
+  ];
+
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'LocalBig',
+    description:
+      'Local business marketing and digital marketing for small businesses across New England. Social media marketing, geofencing, Google Maps marketing, and local SEO.',
+    additionalType: 'https://schema.org/AdvertisingAgency',
+    areaServed,
+    ...(siteUrl ? { url: siteUrl } : {}),
+  };
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Local Business Marketing',
+    serviceType: [
+      'Local Business Marketing',
+      'Digital Marketing for Small Business',
+      'Social Media Marketing',
+      'Geofencing',
+      'Google Maps Marketing',
+      'Local SEO',
+    ],
+    areaServed,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'LocalBig',
+      ...(siteUrl ? { url: siteUrl } : {}),
+    },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
+  const jsonLd = [localBusinessSchema, serviceSchema, faqSchema];
+
   return (
     <>
       <Head>
-        <title>LocalBig — #1 Local Growth Program for Franchise Owners & Local Businesses</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
@@ -605,6 +660,10 @@ export default function LocalBigPage() {
           .hero-stagger > *:nth-child(7){animation-delay:.33s;}
           select option{background:#0F0B1A;color:#fff;}
         `}</style>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </Head>
 
       <div style={{ fontFamily: "'Montserrat', sans-serif", color: '#0F0908', background: '#fff' }}>
@@ -1935,6 +1994,54 @@ export default function LocalBigPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── LOCAL SEO ───────────────────────────────────────────────────── */}
+        <section id="local-seo" className="px-7 py-16" style={{ background: '#FFF8F8' }}>
+          <div className="max-w-[700px] mx-auto">
+            <span className="text-[10px] font-black tracking-[0.2em] uppercase block mb-3" style={{ color: '#FF4D40' }}>
+              Local SEO
+            </span>
+            <h2
+              className="font-black mb-4"
+              style={{ fontSize: 'clamp(26px,6vw,44px)', lineHeight: 0.95, letterSpacing: '-0.02em' }}
+            >
+              Local Business Marketing<br />in <em style={{ fontStyle: 'italic', color: '#E8271A' }}>New England</em>
+            </h2>
+            <p className="text-[14px] leading-relaxed mb-6" style={{ color: '#9CA3AF' }}>
+              LocalBig is a local advertising agency built for small businesses across New England. We specialize in local
+              business marketing, social media marketing, geofencing, Google Maps marketing, and local SEO that turns
+              searches into calls, walk-ins, and repeat customers.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #F0E4E4' }}>
+                <div className="text-[12px] font-black tracking-widest uppercase mb-2" style={{ color: '#E8271A' }}>
+                  Service Areas
+                </div>
+                <p className="text-[13px] leading-relaxed" style={{ color: '#4B5563' }}>
+                  Connecticut, Massachusetts, Rhode Island, New Hampshire, Vermont, and Maine.
+                  We also support local operators in Norwich, Mystic, Willimantic, and Niantic.
+                </p>
+              </div>
+              <div className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #F0E4E4' }}>
+                <div className="text-[12px] font-black tracking-widest uppercase mb-2" style={{ color: '#E8271A' }}>
+                  Core Services
+                </div>
+                <ul className="text-[13px] leading-relaxed" style={{ color: '#4B5563' }}>
+                  <li>Local SEO and Google Maps marketing</li>
+                  <li>Social media marketing and paid ads</li>
+                  <li>Geofencing and proximity targeting</li>
+                  <li>Local listings, reviews, and visibility</li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-[14px] leading-relaxed mt-6" style={{ color: '#9CA3AF' }}>
+              If you need digital marketing for small business in New England, we build a 60-day plan designed to
+              outrank nearby competitors, improve Google Maps visibility, and drive real local demand.
+            </p>
           </div>
         </section>
 
